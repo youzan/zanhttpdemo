@@ -1,0 +1,21 @@
+{
+    "repositories"  : [
+        {
+            "type"  : "git",
+            "url"   : "https://github.com/zanphp/zan.git"
+        },{
+            "packagist": false     
+        }
+    ],    
+    "require"       : {
+        "zan"       : "dev-master"    
+    },
+    "autoload"      : {
+        "classmap"  : []    
+    },
+    "config"        : {
+        "preferred-install" : "dist"    
+    },
+    "minimum-stability" : "stable",
+    "prefer-stable"     : true
+}
