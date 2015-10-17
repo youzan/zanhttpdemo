@@ -1,4 +1,5 @@
 {
+    "name"          : "zanphp/zanhttp",
     "repositories"  : [
         {
             "type"  : "git",
@@ -8,7 +9,7 @@
         }
     ],    
     "require"       : {
-        "zan"       : "dev-master"    
+        "zanphp/zan" : "dev-master"    
     },
     "autoload"      : {
         "classmap"  : []    
