@@ -9,7 +9,7 @@
         }
     ],    
     "require"       : {
-        "zanphp/zan" : "dev-feature/httpServer_v1"
+        "zanphp/zan" : "dev-master"
     },
     "autoload"      : {
         "psr-4"     : {
