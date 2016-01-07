@@ -1,15 +1,17 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: hupeipei
+ * User: hupp
  * Date: 15/12/18
  * Time: 下午4:02
  */
 
-define('APP_PATH', __DIR__);
-require dirname(__DIR__). '/vendor/zanphp/zan/src/Zan.php';
+$config = require(dirname(__DIR__) . '/resource/config.php');
 
-(new HttpServer)->run($argv[1]);
+require (APP_PATH . '/vendor/zanphp/zan/src/Zan.php');
+require (APP_PATH . '/vendor/autoload.php');
+
+\Zan\Framework\Zan::createHttpApplication($config)->run();
 
 
 
