@@ -8,8 +8,8 @@
 
 $config = require(dirname(__DIR__) . '/resource/config.php');
 
-require (APP_PATH . '/vendor/zanphp/zan/src/Zan.php');
 require (APP_PATH . '/vendor/autoload.php');
+require (APP_PATH . '/vendor/zanphp/zan/src/Zan.php');
 
 \Zan\Framework\Zan::createHttpApplication($config)->run();
 

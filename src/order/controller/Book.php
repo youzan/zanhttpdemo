@@ -21,7 +21,7 @@ class Book extends Controller{
 
     private function getHttpConfig()
     {
-        yield Config::get('http');
+        yield Config::get('route');
     }
 
 }
