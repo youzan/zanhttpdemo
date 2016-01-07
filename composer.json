@@ -9,10 +9,13 @@
         }
     ],    
     "require"       : {
-        "zanphp/zan" : "dev-master"    
+        "zanphp/zan" : "dev-feature/httpServer_v1"
     },
     "autoload"      : {
-        "classmap"  : []    
+        "psr-4"     : {
+            "Zanhttp\\" : "src"
+        },
+        "classmap"  : []
     },
     "config"        : {
         "preferred-install" : "dist"    
