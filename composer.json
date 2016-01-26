@@ -9,11 +9,12 @@
         }
     ],    
     "require"       : {
-        "zanphp/zan" : "dev-master"
+        "zanphp/zan" : "dev-feature/filter_v1"
     },
     "autoload"      : {
         "psr-4"     : {
-            "Zanhttp\\" : "src"
+            "Zanhttp\\" : "src",
+            "Zaninit\\" : "init"
         },
         "classmap"  : []
     },

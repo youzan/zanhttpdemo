@@ -1,10 +1,5 @@
+#!/usr/bin/env php
 <?php
-/**
- * Created by PhpStorm.
- * User: hupp
- * Date: 15/12/18
- * Time: 下午4:02
- */
 
 $config = require(dirname(__DIR__) . '/resource/config.php');
 
