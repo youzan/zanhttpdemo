@@ -1,27 +1,33 @@
 <?php
 namespace Zanhttp\Order\Controller;
 
-use Zan\Framework\Foundation\Core\Config;
 use Zan\Framework\Foundation\Domain\Controller;
+use Zanhttp\Order\Service\Pay;
 
-class Book extends Controller{
+class Book extends Controller {
 
     public function index()
     {
-        $output = (yield $this->out('value'));
-        $config = (yield $this->getHttpConfig());
+        $this->output('hello world!');
+    }
 
-        $this->output(array_merge($output, $config));
+    public function pay()
+    {
+        $data = (yield (new Pay())->getData());
+
+        $this->output($data);
+    }
+
+    public function login()
+    {
+        $data = (yield $this->out('value'));
+
+        $this->output($data);
     }
 
     private function out($val)
     {
         yield ['key' => $val];
-    }
-
-    private function getHttpConfig()
-    {
-        yield Config::get('route');
     }
 
 }
