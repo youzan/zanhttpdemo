@@ -9,10 +9,14 @@
         }
     ],    
     "require"       : {
-        "zanphp/zan" : "dev-master"    
+        "zanphp/zan" : "dev-master"
     },
     "autoload"      : {
-        "classmap"  : []    
+        "psr-4"     : {
+            "Zanhttp\\" : "src",
+            "Zaninit\\" : "init"
+        },
+        "classmap"  : []
     },
     "config"        : {
         "preferred-install" : "dist"    

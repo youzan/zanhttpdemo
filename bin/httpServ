@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+
+$config = require(dirname(__DIR__) . '/resource/config.php');
+
+require (APP_PATH . '/vendor/autoload.php');
+
+\Zan\Framework\Zan::createHttpApplication($config)->run();
+
+
+
+
+
