@@ -2,14 +2,20 @@
 
 namespace Zanhttp\Order\Service;
 
+use Zan\Framework\Network\Http\Client;
+
 class Pay {
 
     public function getData()
     {
-        yield [
-            'E20141011',
-            'E20141022',
-            'E20151033',
+        $option = [
+            'refundNo' => '123456',
+            'refundState' => 2,
+            'respond' => 11111
         ];
+        $payResult = (yield Client::call('pay.refund.refundLog.syncRefundState', $option));
+        var_dump('pay', $payResult);
+
+        yield $payResult;
     }
 }

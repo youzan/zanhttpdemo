@@ -8,13 +8,15 @@ class Book extends Controller {
 
     public function index()
     {
-        $this->output('hello world!');
+        $this->output('hello zanphp!');
     }
 
     public function pay()
     {
-        $data = (yield (new Pay())->getData());
+        $pay = new Pay();
+        $data = (yield $pay->getData());
 
+        var_dump('result:',$data);
         $this->output($data);
     }
 
