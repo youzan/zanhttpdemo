@@ -2,34 +2,20 @@
 namespace Zanhttp\Order\Controller;
 
 use Zan\Framework\Foundation\Domain\Controller;
-use Zanhttp\Order\Service\Pay;
+use Zanhttp\Order\Service\Order as OrderService;
 
 class Book extends Controller {
 
     public function index()
     {
-        $this->output('hello zanphp!');
+        $this->output('Hello Zanphp!');
     }
 
-    public function pay()
+    public function detail()
     {
-        $pay = new Pay();
-        $data = (yield $pay->getData());
-
-        var_dump('result:',$data);
-        $this->output($data);
-    }
-
-    public function login()
-    {
-        $data = (yield $this->out('value'));
+        $data = (yield (new OrderService())->getOrder());
 
         $this->output($data);
-    }
-
-    private function out($val)
-    {
-        yield ['key' => $val];
     }
 
 }
