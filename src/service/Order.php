@@ -1,16 +1,16 @@
 <?php
 
-namespace Zanhttp\Order\Service;
+namespace Zanhttp\Service;
 
 use Zan\Framework\Network\Http\Client;
 
 class Order {
 
-    public function getOrder()
+    public function getOrder($orderNo, $kdtId)
     {
         $option = [
-            'order_no'     => 'E20151012160739094114428',
-            'kdt_id'       => 1,
+            'order_no'     => $orderNo,
+            'kdt_id'       => $kdtId,
             'format_order' => false,
             'with_items'   => false,
             'with_peerpay' => false,
