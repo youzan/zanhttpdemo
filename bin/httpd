@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+
+$cmd = 'start';
+
+switch ($cmd) {
+    case 'start':
+
+        $app = require_once __DIR__.'/../init/app.php';
+
+        $server = $app->make(
+            Zan\Framework\Network\Http\Server::class,
+            [$app]
+        );
+
+        $server->start();
+
+        break;
+    case 'stop':
+        break;
+}
+
