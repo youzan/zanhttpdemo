@@ -8,5 +8,11 @@ return [
         'max_request'   => 5000,
     ],
 
+    'client' => [
+        'host'          => 'api.koudaitong.com',
+        'port'          => '80',
+        'timeout'       => 1,
+    ],
+
 
 ];
