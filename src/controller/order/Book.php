@@ -2,14 +2,14 @@
 
 namespace Com\Youzan\ZanHttpDemo\Controller\Order;
 
-use Zan\Framework\Foundation\Domain\Controller;
+use Zan\Framework\Foundation\Domain\HttpController as Controller;
 use Com\Youzan\ZanHttpDemo\Service\Order as OrderService;
 
 class Book extends Controller {
 
     public function index()
     {
-        $this->output('Hello Zanphp!');
+        yield $this->output('Hello Zanphp!');
     }
 
     public function detail()
