@@ -1,6 +1,6 @@
 <?php
 
-namespace Zanhttp\Controller\Refund\Baidu;
+namespace Com\Youzan\ZanHttpDemo\Controller\Refund\Baidu;
 
 use Zan\Framework\Foundation\Domain\Controller;
 

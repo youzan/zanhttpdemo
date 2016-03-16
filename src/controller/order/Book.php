@@ -1,9 +1,9 @@
 <?php
 
-namespace Zanhttp\Controller\Order;
+namespace Com\Youzan\ZanHttpDemo\Controller\Order;
 
 use Zan\Framework\Foundation\Domain\Controller;
-use Zanhttp\Service\Order as OrderService;
+use Com\Youzan\ZanHttpDemo\Service\Order as OrderService;
 
 class Book extends Controller {
 

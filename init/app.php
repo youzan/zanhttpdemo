@@ -4,7 +4,7 @@ use Zan\Framework\Foundation\Application;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$appName = 'HttpDemo';
+$appName = 'ZanHttpDemo';
 $rootPath = realpath(__DIR__.'/../');
 
 $app = new Application($appName, $rootPath);

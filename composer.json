@@ -3,7 +3,7 @@
     "repositories": [
         {
             "type": "git",
-            "url": "http://gitlab.qima-inc.com/php-lib/zan.git"
+            "url": "git@gitlab.qima-inc.com:php-lib/zan.git"
         },
         {
             "type": "git",
@@ -26,12 +26,12 @@
         }
     ],
     "require": {
-        "zanphp/zan": "dev-dev"
+        "zanphp/zan": "dev-feature/request_response_server"
     },
     "autoload": {
         "psr-4": {
-            "ZanHttpDemo\\": "src",
-            "ZanHttpDemoInit\\": "init"
+            "Com\\Youzan\\ZanHttpDemo\\": "src",
+            "Com\\Youzan\\ZanHttpDemoInit\\": "init"
         },
         "classmap": []
     },
@@ -46,7 +46,5 @@
     },
     "config": {
         "preferred-install": "dist"
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    }
 }

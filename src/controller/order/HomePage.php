@@ -1,26 +1,13 @@
 <?php
 
-namespace Zanhttp\Controller\Order;
+namespace Com\Youzan\ZanHttpDemo\Controller\Order;
 
-use Zan\Framework\Foundation\Domain\Controller;
-use Zan\Framework\Network\Contract\Response;
-use Zan\Framework\Network\Http\Request;
+use Zan\Framework\Foundation\Domain\HttpController;
 
-class HomePage extends Controller {
-
-    /**
-     * If you want to use __construct, so...
-     */
-    public function __construct(Request $request, Response $response)
-    {
-        parent::__construct($request, $response);
-
-        //todo...
-    }
-
+class HomePage extends HttpController {
     public function index()
     {
-        $this->output('This is default home page!');
+        yield $this->output('This is default home page!');
     }
 
 }

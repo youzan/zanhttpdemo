@@ -8,11 +8,7 @@ switch ($cmd) {
 
         $app = require_once __DIR__.'/../init/app.php';
 
-        $server = $app->make(
-            Zan\Framework\Network\Http\Server::class,
-            [$app]
-        );
-
+        $server = $app->createHttpServer();
         $server->start();
 
         break;

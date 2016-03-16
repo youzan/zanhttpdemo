@@ -1,6 +1,6 @@
 <?php
 
-namespace Zanhttp\Service;
+namespace Com\Youzan\ZanHttpDemo\Service;
 
 use Zan\Framework\Network\Http\Client;
 
