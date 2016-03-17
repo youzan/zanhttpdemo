@@ -5,7 +5,7 @@ namespace Com\Youzan\ZanHttpDemo\Controller\Order;
 use Zan\Framework\Foundation\Domain\HttpController as Controller;
 use Com\Youzan\ZanHttpDemo\Service\Order as OrderService;
 
-class Book extends Controller {
+class BookController extends Controller {
 
     public function index()
     {

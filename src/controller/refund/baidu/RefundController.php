@@ -4,7 +4,7 @@ namespace Com\Youzan\ZanHttpDemo\Controller\Refund\Baidu;
 
 use Zan\Framework\Foundation\Domain\HttpController as Controller;
 
-class Refund extends Controller{
+class RefundController extends Controller{
 
     public function index()
     {
