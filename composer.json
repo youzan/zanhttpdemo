@@ -43,13 +43,13 @@
     "autoload": {
         "psr-4": {
             "Com\\Youzan\\ZanHttpDemo\\": "src",
+            "Com\\Youzan\\ZanHttpDemo\\Tests": "test",
             "Com\\Youzan\\ZanHttpDemoInit\\": "init"
         },
         "classmap": []
     },
     "autoload-dev": {
         "classmap": [
-            "tests/TestCase.php"
         ]
     },
     "require-dev": {
