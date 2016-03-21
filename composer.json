@@ -43,7 +43,7 @@
     "autoload": {
         "psr-4": {
             "Com\\Youzan\\ZanHttpDemo\\": "src",
-            "Com\\Youzan\\ZanHttpDemo\\Tests": "test",
+            "Com\\Youzan\\ZanHttpDemo\\Tests\\": "test",
             "Com\\Youzan\\ZanHttpDemoInit\\": "init"
         },
         "classmap": []
