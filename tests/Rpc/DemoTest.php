@@ -9,12 +9,14 @@
 namespace Com\Youzan\ZanHttpDemo\Tests\Rpc;
 
 use Com\Youzan\NovaTcpDemo\Service\DemoService;
-use Zan\Framework\Testing\UnitTest;
+use Zan\Framework\Testing\TaskTest;
 
-class DemoTest extends UnitTest {
-    public function testDemoRpcWork()
+class DemoTest extends TaskTest {
+    public function taskDemoRpcWork()
     {
-        $client = new DemoService();
-        $client->echoBack('hello demo');
+        $service = new DemoService();
+        $result = (yield $service->echoBack('hello demo'));
+
+        $this->assertEquals('hello demo', $result, 'DemoService.echoBack rpc call failed');
     }
 }
