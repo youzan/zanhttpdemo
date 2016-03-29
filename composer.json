@@ -26,7 +26,7 @@
         }
     ],
     "require": {
-        "zanphp/zan": "dev-dev"
+        "zanphp/zan": "dev-feature/sql_map_v5"
     },
     "autoload": {
         "psr-4": {
