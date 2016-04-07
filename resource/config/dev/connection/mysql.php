@@ -7,11 +7,17 @@
  * Time: 下午5:30
  */
 return [
-    'db_koudaitong'         => [
-        'server'            => 'mysql.bj_01',
-        'db'                => '',
+    'pifa'         => [
+        'charset'           => 'utf8mb4',
+        'persistent'        => false,
+        'username'          => 'test_koudaitong',
+        'password'          => 'nPMj9WWpZr4zNmjz',
+        'host'              => '192.168.66.202',
+        'port'              => 3306,
+        'db'                => 'pf',
         'pool'              => [
-            'initNum'       => 10
+            'init_num'      => 10,
+            'max_num'       => 30,
         ],
     ],
 
