@@ -7,6 +7,15 @@
         },
         {
             "type": "git",
+            "url": "git@gitlab.qima-inc.com:php-lib/nova-asnyc.git"
+        },
+        {
+            "type": "git",
+            "url": "git@gitlab.qima-inc.com:php-lib/nova-tcpdemo.git"
+        },
+
+        {
+            "type": "git",
             "url": "http://git.qima-inc.com/php-3rd-lib/qiniu-php-sdk.git"
         },
         {
@@ -26,18 +35,20 @@
         }
     ],
     "require": {
-        "zanphp/zan": "dev-feature/sql_map_v5"
+        "zanphp/zan": "dev-dev",
+        "zanphp/novatcpdemo": "dev-dev",
+        "zanphp/nova": "dev-dev"
     },
     "autoload": {
         "psr-4": {
             "Com\\Youzan\\ZanHttpDemo\\": "src",
+            "Com\\Youzan\\ZanHttpDemo\\Tests\\": "test",
             "Com\\Youzan\\ZanHttpDemoInit\\": "init"
         },
         "classmap": []
     },
     "autoload-dev": {
         "classmap": [
-            "tests/TestCase.php"
         ]
     },
     "require-dev": {
