@@ -37,8 +37,8 @@
     "require": {
         "zanphp/zan": "dev-dev",
         "zanphp/novatcpdemo": "dev-dev",
-        "zanphp/nova": "dev-dev"
-
+        "zanphp/nova": "dev-dev",
+        "elasticsearch/yz-elasticsearch-client": "dev-master"
     },
     "autoload": {
         "psr-4": {
