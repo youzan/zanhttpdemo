@@ -1,0 +1,17 @@
+<?php $layout->extend('common/tpl/base'); ?>
+
+<?php $layout->block('title'); ?>
+Test ExceptionHandler
+<?php $layout->endBlock();?>
+
+<?php $layout->block('page_css'); ?>
+<?php $layout->endBlock();?>
+
+<?php $layout->block('content'); ?>
+<div class="test">
+    <?php echo "Test Result: " . $testResult ?>
+</div>
+<?php $layout->endBlock();?>
+
+<?php $layout->block('page_js'); ?>
+<?php $layout->endblock(); ?>

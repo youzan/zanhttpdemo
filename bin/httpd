@@ -6,6 +6,7 @@ $cmd = 'start';
 switch ($cmd) {
     case 'start':
 
+        /** @var \Zan\Framework\Foundation\Application $app */
         $app = require_once __DIR__.'/../init/app.php';
 
         $server = $app->createHttpServer();
