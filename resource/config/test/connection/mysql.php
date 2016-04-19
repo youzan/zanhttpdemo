@@ -14,11 +14,11 @@ return [
             'minimum-connection-count' => '10',
             'keeping-sleep-time' => '10',
             'init-connection'=> '2',
-            'host' => '10.200.175.98',
-            'user' => 'pifa_user',
-            'password' => 'GhspGBQwPGR7bbb2',
-            'database' => 'pifa',
-            'port' => '3308'
+            'host' => '192.168.66.202',
+            'user' => 'test_koudaitong',
+            'password' => 'nPMj9WWpZr4zNmjz',
+            'database' => 'pf',
+            'port' => '3306'
         ],
     ],
     'default_read' => [

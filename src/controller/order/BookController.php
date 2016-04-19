@@ -42,12 +42,13 @@ class BookController extends Controller {
 
         ];
         $data = [
-            'inserts' => [
+            'insert' => [
                 'kdt_id' => 111, 'buyer_id' => 2, 'old_level_id' => 3, 'new_level_id' => 4, 'operation' => 'insert.test', 'operation_admin_id' => 6,  'create_time' => time(),  'update_time' => time(),  'remark' => '11导入测试',
 
             ]
 
         ];
+        print_r($data);
         $a = (yield DB::execute('deamon.mak.insert',$data));
 
         yield $this->output(var_export($a, true));
