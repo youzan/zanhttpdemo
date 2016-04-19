@@ -12,7 +12,7 @@ return [
             'pool_name' => 'pifa',
             'maximum-connection-count' => '50',
             'minimum-connection-count' => '10',
-            'keeping-sleep-time' => '10',
+            'keeping-sleep-time' => '35000',
             'init-connection'=> '2',
             'host' => '192.168.66.202',
             'user' => 'test_koudaitong',
@@ -21,8 +21,5 @@ return [
             'port' => '3306'
         ],
     ],
-    'default_read' => [
-        'engine'=> 'mysqli',
-        'pool'  => [],
-    ],
+   
 ];
