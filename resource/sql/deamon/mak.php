@@ -4,7 +4,7 @@ return [
     'insert'=>[
         'require' => [],
         'limit'   => [],
-        'sql'     => 'INSERT INTO market #INSERT#',
+        'sql'     => 'INSERT INTO member_log #INSERT#',
     ],
     'batch_insert' => [
         'require' => [],
