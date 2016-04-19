@@ -48,7 +48,10 @@ class BookController extends Controller {
             ]
 
         ];
+//        yield $this->output(var_export(1111111, true));
+//        print_r($data);
         SqlMapInitiator::getInstance()->init();
+
         $a = (yield DB::execute('deamon.mak.insert',$data));
 
         yield $this->output(var_export($a, true));
