@@ -5,7 +5,7 @@ namespace Com\Youzan\ZanHttpDemo\Controller\Order;
 use Zan\Framework\Foundation\Domain\HttpController as Controller;
 use Com\Youzan\ZanHttpDemo\Service\Order as OrderService;
 use Zan\Framework\Store\Facade\Db;
-
+use Zan\Framework\Store\Database\Sql\SqlMapInitiator;
 class BookController extends Controller {
 
     public function index()
@@ -48,7 +48,7 @@ class BookController extends Controller {
             ]
 
         ];
-        print_r($data);
+        SqlMapInitiator::getInstance()->init();
         $a = (yield DB::execute('deamon.mak.insert',$data));
 
         yield $this->output(var_export($a, true));
