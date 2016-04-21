@@ -51,9 +51,13 @@ class BookController extends Controller {
 //        yield $this->output(var_export(1111111, true));
 //        print_r($data);
         SqlMapInitiator::getInstance()->init();
+        $a = (yield DB::execute('deamon.mak.update_new_level_id', ['data' => ['old_level_id' => 123], 'and' => ['new_level_id', '=', '', 'new_level_id+3'], 'var' => ['id' => 827]]));
 
-        $a = (yield DB::execute('deamon.mak.insert',$data));
-
+        yield $this->output(var_export($a, true));
+//        echo 'start:'."\r\n";
+//        $a = (yield DB::execute('deamon.mak.insert',$data));
+//
+//        echo 'end;'."\r\n";
         yield $this->output(var_export($a, true));
     }
 

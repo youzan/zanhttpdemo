@@ -37,5 +37,11 @@ return [
             AND `buyer_id` in #{buyer_id}
         ",
     ],
-
+    'update_new_level_id' => [
+        'sql' => "
+            UPDATE member_log set #DATA# #AND#
+            WHERE 1
+            AND `id` = #{kdt_id}
+        ",
+    ]
 ];
