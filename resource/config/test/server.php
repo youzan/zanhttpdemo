@@ -9,5 +9,5 @@
 return [
     'host'          => '127.0.0.1',
     'port'          => '8030',
-    'worker_num'    => 4,
+    'worker_num'    => 2,
 ];
