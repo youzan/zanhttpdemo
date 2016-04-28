@@ -39,10 +39,10 @@
         }
     ],
     "require": {
-        "zanphp/zan": "dev-feature/worker_monitor",
+        "zanphp/zan": "dev-dev",
         "zanphp/novatcpdemo": "dev-dev",
         "zanphp/nova": "dev-dev",
-        "elasticsearch/yz-elasticsearch-client": "dev-master",
+        "elasticsearch/yz-elasticsearch-client": "dev-master"
     },
     "autoload": {
         "psr-4": {
