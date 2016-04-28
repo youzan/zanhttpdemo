@@ -11,11 +11,7 @@
         },
         {
             "type": "git",
-            "url": "http://git.qima-inc.com/php-3rd-lib/qiniu-php-sdk.git"
-        },
-        {
-            "type": "git",
-            "url": "git@gitlab.qima-inc.com:php-lib/nova-tcpdemo.git"
+            "url": "http://gitlab.qima-inc.com/php-lib/nova-tcpdemo.git"
         },
         {
             "type": "git",
