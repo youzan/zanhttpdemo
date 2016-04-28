@@ -3,15 +3,28 @@
     "repositories": [
         {
             "type": "git",
-            "url": "http://gitlab.qima-inc.com/php-lib/zan.git"
+            "url": "git@gitlab.qima-inc.com:php-lib/zan.git"
         },
         {
             "type": "git",
-            "url": "http://gitlab.qima-inc.com/php-lib/nova-asnyc.git"
+            "url": "git@gitlab.qima-inc.com:php-lib/nova-asnyc.git"
         },
+        {
+            "type": "git",
+            "url": "git@gitlab.qima-inc.com:php-lib/nova-tcpdemo.git"
+        },
+
         {
             "type": "git",
             "url": "http://git.qima-inc.com/php-3rd-lib/qiniu-php-sdk.git"
+        },
+        {
+            "type": "git",
+            "url": "http://git.qima-inc.com/php-3rd-lib/league-climate.git"
+        },
+        {
+            "type": "git",
+            "url": "http://git.qima-inc.com/php-3rd-lib/seld-cli-prompt.git"
         },
         {
             "type": "git",
@@ -27,6 +40,7 @@
     ],
     "require": {
         "zanphp/zan": "dev-feature/worker_monitor",
+        "zanphp/novatcpdemo": "dev-dev",
         "zanphp/nova": "dev-dev",
         "elasticsearch/yz-elasticsearch-client": "dev-master"
     },
