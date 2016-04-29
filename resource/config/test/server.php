@@ -13,7 +13,7 @@ return [
         'worker_num'    => 2,
     ],
     'monitor' =>[
-        'reaction_limit' => 500,     //
+        'reaction_limit' => 500,        //
         'live_time' => 1800000,         //30m
         'check_time' => 1000,           //1s
         'memory_limit' => 1610612736,   //1.5G
