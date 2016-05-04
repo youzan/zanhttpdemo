@@ -6,23 +6,25 @@ use Zan\Framework\Foundation\Domain\HttpController as Controller;
 use Com\Youzan\NovaTcpDemo\Service\DemoService;
 
 class IndexController extends Controller {
-    const LEN_1K = 1024;
 
     public function index()
     {
         $filter = $this->request->get();
-        //默认1K
-        $len = isset( $filter['len']) ?  $filter['len'] : 1;
-        $useTcp = $filter['tcp'] ? true : false;
-        $testString = str_repeat('a', $len * self::LEN_1K);
-        $result = null;
 
-        if ($useTcp) {
-            $demoService = new DemoService();
-            $result = (yield $demoService->echoBack($testString));
+        $demoService = new DemoService();
+
+        if (isset($filter['p'])) {
+            $coroutines = [];
+            for ($i = 0; $i < 10; $i++) {
+                $coroutines[] = $demoService->echoBack('hello, world');
+            }
+            yield parallel($coroutines);
         } else {
-            $result = $testString;
+            for ($i = 0; $i < 10; $i++) {
+                yield $demoService->echoBack('hello, world');
+            }
         }
-        yield $this->output($result);
+
+        yield $this->output('hello, world');
     }
 }
