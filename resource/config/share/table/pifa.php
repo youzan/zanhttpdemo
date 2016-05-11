@@ -6,7 +6,7 @@
  * Time: 下午5:41
  */
 return [
-    'pifa' => [
+    'connection.mysql.default_write' => [
         'book_lottery',
         'book_lottery_edit_log',
         'book_lottery_prize',
