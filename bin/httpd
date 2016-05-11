@@ -1,4 +1,4 @@
-#!/usr/bin/env /usr/bin/php
+#!/usr/bin/env /usr/local/bin/php
 <?php
 
 $cmd = 'start';

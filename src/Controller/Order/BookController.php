@@ -51,13 +51,33 @@ class BookController extends Controller {
 //        yield $this->output(var_export(1111111, true));
 //        print_r($data);
         SqlMapInitiator::getInstance()->init();
-        $a = (yield DB::execute('deamon.mak.update_new_level_id', ['data' => ['old_level_id' => 123], 'and' => ['new_level_id', '=', '', 'new_level_id+3'], 'var' => ['id' => 827]]));
+//        $a = (yield DB::execute('deamon.mak.update_new_level_id', ['data' => ['old_level_id' => 123], 'and' => [['new_level_id', '=', '', 'new_level_id+3']], 'var' => ['id' => 827]]));
 
-        yield $this->output(var_export($a, true));
+//        yield $this->output(var_export($a, true));
 //        echo 'start:'."\r\n";
 //        $a = (yield DB::execute('deamon.mak.insert',$data));
 //
 //        echo 'end;'."\r\n";
+
+//        yield DB::beginTransaction();
+        $data = [
+            'insert' => [
+                'kdt_id' => 111, 'buyer_id' => 2, 'old_level_id' => 3, 'new_level_id' => 4, 'operation' => 'insert.test', 'operation_admin_id' => 6,  'create_time' => time(),  'update_time' => time(),  'remark' => '11导入测试',
+
+            ]
+
+        ];
+//        $a = (yield DB::execute('deamon.mak.insert',$data));
+        var_dump('lasetId');
+//        yield $this->output(var_export($a, true));
+//        yield DB::commit();
+        var_dump('1231312313');
+//        yield DB::commit();
+//        yield $this->output(var_export($a, true));
+
+
+
+        $a = (yield DB::execute('deamon.mak.select_id',['var' => ['id' => 1]]));
         yield $this->output(var_export($a, true));
     }
 

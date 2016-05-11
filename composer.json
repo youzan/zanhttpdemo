@@ -39,7 +39,7 @@
         }
     ],
     "require": {
-        "zanphp/zan": "dev-dev",
+        "zanphp/zan": "dev-hotfix/sql_map_fix_v1",
         "zanphp/novatcpdemo": "dev-dev",
         "zanphp/nova": "dev-dev",
         "elasticsearch/yz-elasticsearch-client": "dev-master"

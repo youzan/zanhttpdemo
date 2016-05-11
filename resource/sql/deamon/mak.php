@@ -39,9 +39,16 @@ return [
     ],
     'update_new_level_id' => [
         'sql' => "
-            UPDATE member_log set #DATA# #AND#
+            UPDATE member_log set #DATA#, #AND#
             WHERE 1
-            AND `id` = #{kdt_id}
+            AND `id` = #{id}
+        ",
+    ],
+    'select_id' => [
+        'sql' => "
+            SELECT * FROM member_log
+            WHERE 1
+            AND `id` = #{id}
         ",
     ]
 ];
