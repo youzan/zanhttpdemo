@@ -5,7 +5,7 @@ namespace Com\Youzan\ZanHttpDemo\Controller\Order;
 use Zan\Framework\Foundation\Domain\HttpController as Controller;
 use Com\Youzan\ZanHttpDemo\Service\Order as OrderService;
 use Zan\Framework\Network\Connection\ConnectionManager;
-use Zan\Framework\Store\Cache;
+use Zan\Framework\Store\Facade\Cache;
 use Zan\Framework\Store\Facade\Db;
 use Zan\Framework\Store\Database\Sql\SqlMapInitiator;
 class BookController extends Controller {
@@ -85,18 +85,25 @@ class BookController extends Controller {
 
     public function bb()
     {
-        $conn = ConnectionManager::getInstance()->get('connection.redis.default_write');
-        $cache = new Cache($conn);
+        $conn = (yield ConnectionManager::getInstance()->get('connection.redis.default_write'));
+
+        $cache = new Cache($conn->getSocket());
         $result = (yield $cache->set('cache.test.test', 'abc-123'));
+        var_dump('bb:', $result);
+        $conn->release();
 
         yield $this->output(var_export($result, true));
     }
 
     public function cc()
     {
-        $conn = ConnectionManager::getInstance()->get('connection.redis.default_write');
-        $cache = new Cache($conn);
-        $result = $cache->get('cache.test.test');
+        $conn = (yield ConnectionManager::getInstance()->get('connection.redis.default_write'));
+
+        $cache = new Cache($conn->getSocket());
+        $result = (yield $cache->get('cache.test.test'));
+        $conn->release();
+
+        var_dump('cc', $result);
         yield $this->output(var_export($result, true));
     }
 
