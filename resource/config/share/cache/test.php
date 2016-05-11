@@ -6,7 +6,7 @@
  * Time: 上午9:58
  */
 return [
-
+    'connection' => 'connection.redis.default_write',
     'test' => [
         'key' => 'test_abc'
     ],

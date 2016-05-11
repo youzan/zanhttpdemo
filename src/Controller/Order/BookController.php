@@ -2,6 +2,7 @@
 
 namespace Com\Youzan\ZanHttpDemo\Controller\Order;
 
+use Zan\Framework\Foundation\Core\Config;
 use Zan\Framework\Foundation\Domain\HttpController as Controller;
 use Com\Youzan\ZanHttpDemo\Service\Order as OrderService;
 use Zan\Framework\Network\Connection\ConnectionManager;
@@ -85,25 +86,14 @@ class BookController extends Controller {
 
     public function bb()
     {
-        $conn = (yield ConnectionManager::getInstance()->get('connection.redis.default_write'));
-
-        $cache = new Cache($conn->getSocket());
-        $result = (yield $cache->set('cache.test.test', 'abc-123'));
-        var_dump('bb:', $result);
-        $conn->release();
-
+        $result = (yield Cache::set('cache.test.test', 'abc-123'));
         yield $this->output(var_export($result, true));
     }
 
     public function cc()
     {
-        $conn = (yield ConnectionManager::getInstance()->get('connection.redis.default_write'));
+        $result = (yield Cache::get('cache.test.test'));
 
-        $cache = new Cache($conn->getSocket());
-        $result = (yield $cache->get('cache.test.test'));
-        $conn->release();
-
-        var_dump('cc', $result);
         yield $this->output(var_export($result, true));
     }
 
