@@ -6,13 +6,9 @@
  * Time: 下午4:53
  */
 return [
-    'nova.pfapi' => [
+    'pfapi' => [
         'engine'=> 'novaClient',
-        'pool'  => [
-            'pool_name' => 'nova.pfapi',
-            'keeping-sleep-time' => 10000,
-            'init-connection'=> 2,
-            'host' => '127.0.0.1',
+        'host' => '127.0.0.1',
             'port' => '8020',
             'timeout' => 5000,
             'persistent' => true,
@@ -23,6 +19,10 @@ return [
                 'package_body_offset' => 0,
                 'open_nova_protocol' => 1
             ],
+        'pool'  => [
+            'heartbeat-time' => 10000,
+            'init-connection'=> 2,
+            
         ],
     ],
 ];
