@@ -2,10 +2,13 @@
 
 namespace Com\Youzan\ZanHttpDemo\Controller\Order;
 
+use Com\Youzan\NovaTcpDemo\Service\DemoService;
 use Zan\Framework\Foundation\Domain\HttpController as Controller;
 use Com\Youzan\ZanHttpDemo\Service\Order as OrderService;
+use Zan\Framework\Network\Http\Client;
 use Zan\Framework\Store\Facade\Db;
 use Zan\Framework\Store\Database\Sql\SqlMapInitiator;
+
 class BookController extends Controller {
 
     public function index()
@@ -81,5 +84,12 @@ class BookController extends Controller {
         yield $this->output(var_export($a, true));
     }
 
+    public function test(){
+        $time = time();
+        $service = new DemoService();
+        $result = (yield $service->echoBack('hello demo'));
+        $end = time();
+        yield $this->output([$time,$end]);
+    }
 
 }
