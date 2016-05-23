@@ -6,6 +6,11 @@ use Com\Youzan\NovaTcpDemo\Service\DemoService;
 use Zan\Framework\Foundation\Domain\HttpController as Controller;
 use Com\Youzan\ZanHttpDemo\Service\Order as OrderService;
 use Zan\Framework\Network\Http\Client;
+use Zan\Framework\Foundation\Core\Config;
+use Zan\Framework\Foundation\Domain\HttpController as Controller;
+use Com\Youzan\ZanHttpDemo\Service\Order as OrderService;
+use Zan\Framework\Network\Connection\ConnectionManager;
+use Zan\Framework\Store\Facade\Cache;
 use Zan\Framework\Store\Facade\Db;
 use Zan\Framework\Store\Database\Sql\SqlMapInitiator;
 
@@ -91,5 +96,18 @@ class BookController extends Controller {
         $end = time();
         yield $this->output([$time,$end]);
     }
+    public function bb()
+    {
+        $result = (yield Cache::set('cache.test.test', 'abc-123'));
+        yield $this->output(var_export($result, true));
+    }
+
+    public function cc()
+    {
+        $result = (yield Cache::get('cache.test.test'));
+
+        yield $this->output(var_export($result, true));
+    }
+
 
 }
