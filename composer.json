@@ -1,32 +1,35 @@
 {
-    "name": "zanphp/zan",
+    "name": "zanphp/zanhttp",
     "repositories": [
+        {
+            "type"  : "git",
+            "url"   : "https://github.com/zanphp/zan.git"
+        },
+        {
+            "packagist": false
+        },
+        {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
     ],
     "require": {
+        "zanphp/zan": "dev-master"
     },
     "autoload": {
         "psr-4": {
-            "Zan\\Framework\\": "src/"
+            "Com\\Youzan\\ZanHttpDemo\\": "src",
+            "Com\\Youzan\\ZanHttpDemo\\Tests\\": "test",
+            "Com\\Youzan\\ZanHttpDemoInit\\": "init"
         },
-        "classmap": [
-        ],
-        "files": [
-            "src/Foundation/Coroutine/Command/Task.php",
-            "src/Utilities/helpers.php"
-        ]
+        "classmap": []
     },
     "autoload-dev": {
-        "psr-4": {
-            "Zan\\Framework\\Test\\": "test/"
-        },
         "classmap": [
-            "test/TestCase.php"
         ]
     },
     "config": {
         "preferred-install": "dist",
         "secure-http": false
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    }
 }

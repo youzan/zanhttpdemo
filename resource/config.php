@@ -8,4 +8,5 @@ return [
     'sql_path'          =>   APP_PATH . '/resource/sql',
     'pre_filter_path'   =>   APP_PATH . '/init/PreFilter',
     'post_filter_path'  =>   APP_PATH . '/init/PostFilter',
+    'routing_path'      =>   APP_PATH . '/init/routing',
 ];
