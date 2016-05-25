@@ -4,27 +4,17 @@ namespace Com\Youzan\ZanHttpDemo\Controller\Index;
 
 use Zan\Framework\Foundation\Domain\HttpController as Controller;
 use Com\Youzan\NovaTcpDemo\Service\DemoService;
+use Zan\Framework\Network\Server\Timer\Timer;
 
 class IndexController extends Controller {
 
     public function index()
     {
-        $filter = $this->request->get();
-
+       
         $demoService = new DemoService();
-
-        if (isset($filter['p'])) {
-            $coroutines = [];
-            for ($i = 0; $i < 10; $i++) {
-                $coroutines[] = $demoService->echoBack('hello, world');
-            }
-            yield parallel($coroutines);
-        } else {
-            for ($i = 0; $i < 10; $i++) {
-                yield $demoService->echoBack('hello, world');
-            }
-        }
-
-        yield $this->output('hello, world');
+        $value = (yield $demoService->testException());
+        //yield $this->output($value);
+        yield $this->output('hahaha');
+        //throw new \Exception('biz exception', 11111);
     }
 }
