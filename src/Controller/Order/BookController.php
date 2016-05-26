@@ -3,12 +3,13 @@
 namespace Com\Youzan\ZanHttpDemo\Controller\Order;
 
 use Com\Youzan\NovaTcpDemo\Service\DemoService;
+use Mockery\Exception;
 use Zan\Framework\Foundation\Domain\HttpController as Controller;
 use Com\Youzan\ZanHttpDemo\Service\Order as OrderService;
 use Zan\Framework\Network\Http\Client;
 use Zan\Framework\Foundation\Core\Config;
-use Zan\Framework\Foundation\Domain\HttpController as Controller;
-use Com\Youzan\ZanHttpDemo\Service\Order as OrderService;
+//use Zan\Framework\Foundation\Domain\HttpController as Controller;
+//use Com\Youzan\ZanHttpDemo\Service\Order as OrderService;
 use Zan\Framework\Network\Connection\ConnectionManager;
 use Zan\Framework\Store\Facade\Cache;
 use Zan\Framework\Store\Facade\Db;
@@ -70,23 +71,19 @@ class BookController extends Controller {
 //        yield DB::beginTransaction();
         $data = [
             'insert' => [
-                'kdt_id' => 111, 'buyer_id' => 2, 'old_level_id' => 3, 'new_level_id' => 4, 'operation' => 'insert.test', 'operation_admin_id' => 6,  'create_time' => time(),  'update_time' => time(),  'remark' => '11导入测试',
+                'kdt_id' => 111, 'aaaa' => 1211, 'buyer_id' => 2, 'old_level_id' => 3, 'new_level_id' => 4, 'operation' => 'insert.test', 'operation_admin_id' => 6,  'create_time' => time(),  'update_time' => time(),  'remark' => '11导入测试',
 
             ]
 
         ];
-//        $a = (yield DB::execute('deamon.mak.insert',$data));
-        var_dump('lasetId');
-//        yield $this->output(var_export($a, true));
-//        yield DB::commit();
-        var_dump('1231312313');
-//        yield DB::commit();
-//        yield $this->output(var_export($a, true));
+        try {
+            $a = (yield DB::execute('deamon.mak.insert',$data));
+            yield $this->output(var_export($a, true));
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+        }
 
 
-
-        $a = (yield DB::execute('deamon.mak.select_id',['var' => ['id' => 1]]));
-        yield $this->output(var_export($a, true));
     }
 
     public function test(){
