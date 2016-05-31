@@ -47,10 +47,10 @@
         }
     ],
     "require": {
-        "zanphp/zan": "dev-master",
+        "zanphp/zan": "dev-hotfix/conn-cache",
         "zanphp/novatcpdemo": "dev-dev",
         "zanphp/nova":"dev-master",
-        "php-lib/iron-lib-async":"dev-master",
+        "php-lib/iron-lib-async":"dev-hotfix/zan-t",
         "symfony/console": "3.1",
         "elasticsearch/yz-elasticsearch-client": "dev-master"
     },
