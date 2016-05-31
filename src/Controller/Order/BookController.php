@@ -14,6 +14,9 @@ use Zan\Framework\Network\Connection\ConnectionManager;
 use Zan\Framework\Store\Facade\Cache;
 use Zan\Framework\Store\Facade\Db;
 use Zan\Framework\Store\Database\Sql\SqlMapInitiator;
+use Zan\Framework\Network\Common\HttpClient;
+use Zan\Framework\Network\ServerManager\ServerDiscovery;
+use Zan\Framework\Network\ServerManager\LoadBalancingManager;
 
 class BookController extends Controller {
 
@@ -106,5 +109,12 @@ class BookController extends Controller {
         yield $this->output(var_export($result, true));
     }
 
+    public function hh()
+    {
+        $serverDis = new ServerDiscovery();
+        $result = (yield $serverDis->start());
+        $c = (yield LoadBalancingManager::getInstance()->get());
+        yield $this->output(var_export($result, true));
+    }
 
 }
