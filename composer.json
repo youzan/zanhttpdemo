@@ -9,6 +9,10 @@
             "type": "git",
             "url": "git@gitlab.qima-inc.com:php-lib/nova-asnyc.git"
         },
+	{
+            "type": "git",
+            "url": "http://gitlab.qima-inc.com/php-lib/iron-lib-async.git"
+        },
         {
             "type": "git",
             "url": "git@gitlab.qima-inc.com:php-lib/nova-tcpdemo.git"
@@ -26,6 +30,10 @@
             "type": "git",
             "url": "http://git.qima-inc.com/php-3rd-lib/seld-cli-prompt.git"
         },
+	{
+            "type": "git",
+            "url": "http://gitlab.qima-inc.com/php-3rd-lib/symfony-console.git"
+        },
         {
             "type": "git",
             "url": "http://gitlab.qima-inc.com/php-3rd-lib/yz-elasticsearch.git"
@@ -39,9 +47,16 @@
         }
     ],
     "require": {
+<<<<<<< HEAD
         "zanphp/zan": "dev-master",
         "zanphp/novatcpdemo": "dev-dev",
         "zanphp/nova": "dev-dev",
+=======
+	"zanphp/zan": "dev-master",
+        "zanphp/nova":"dev-master",
+        "php-lib/iron-lib-async":"dev-master",
+        "symfony/console": "3.1",
+>>>>>>> ad1b8d3b39cb828b6cc4569360e344619e07d0b3
         "elasticsearch/yz-elasticsearch-client": "dev-master"
     },
     "autoload": {
@@ -61,6 +76,7 @@
         "mockery/mockery": "~0.9.2"
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "secure-http": false
     }
 }

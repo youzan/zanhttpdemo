@@ -18,6 +18,6 @@ return [
         'check_interval'=> 10000,           //1s
         'memory_limit'  => 1.5 * 1024 * 1024 * 1024,       //1.50G
         'cpu_limit'     => 70,
-        'debug'         => true
+        'debug'         => false
     ]
 ];
