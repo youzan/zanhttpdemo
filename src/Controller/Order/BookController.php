@@ -3,12 +3,15 @@
 namespace Com\Youzan\ZanHttpDemo\Controller\Order;
 
 use Zan\Framework\Foundation\Core\Config;
+use Zan\Framework\Foundation\Core\Path;
 use Zan\Framework\Foundation\Domain\HttpController as Controller;
 use Com\Youzan\ZanHttpDemo\Service\Order as OrderService;
 use Zan\Framework\Network\Connection\ConnectionManager;
 use Zan\Framework\Store\Facade\Cache;
 use Zan\Framework\Store\Facade\Db;
 use Zan\Framework\Store\Database\Sql\SqlMapInitiator;
+use Zan\Framework\Foundation\Core\ConfigLoader;
+
 class BookController extends Controller {
 
     public function index()
@@ -86,15 +89,28 @@ class BookController extends Controller {
 
     public function bb()
     {
-        $result = (yield Cache::set('cache.test.test', 'abc-123'));
+        $result = (yield Cache::set('pf.test.test', 'abc-0126', ['ab123', '098kkss']));
         yield $this->output(var_export($result, true));
     }
 
     public function cc()
     {
-        $result = (yield Cache::get('cache.test.test'));
+        $result = (yield Cache::get('pf.test.test', ['ab123', '098kkss']));
 
         yield $this->output(var_export($result, true));
+    }
+
+    private function map_keys($keys, $config){
+        $format = $config['key'];
+        if($keys === null){
+            return $format;
+        }
+
+        if(!is_array($keys)){
+            $keys = [$keys];
+        }
+        $key = call_user_func_array('sprintf', array_merge([$format], $keys));
+        return $key;
     }
 
 

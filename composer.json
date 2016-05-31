@@ -39,7 +39,7 @@
         }
     ],
     "require": {
-        "zanphp/zan": "dev-hotfix/pool_config",
+        "zanphp/zan": "dev-master",
         "zanphp/novatcpdemo": "dev-dev",
         "zanphp/nova": "dev-dev",
         "elasticsearch/yz-elasticsearch-client": "dev-master"
