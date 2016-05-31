@@ -47,7 +47,8 @@
         }
     ],
     "require": {
-	"zanphp/zan": "dev-master",
+        "zanphp/zan": "dev-master",
+        "zanphp/novatcpdemo": "dev-dev",
         "zanphp/nova":"dev-master",
         "php-lib/iron-lib-async":"dev-master",
         "symfony/console": "3.1",
