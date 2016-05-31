@@ -2,21 +2,13 @@
 
 namespace Com\Youzan\ZanHttpDemo\Controller\Order;
 
-use Zan\Framework\Foundation\Core\Config;
-use Zan\Framework\Foundation\Core\Path;
 use Com\Youzan\NovaTcpDemo\Service\DemoService;
 use Mockery\Exception;
 use Zan\Framework\Foundation\Domain\HttpController as Controller;
 use Com\Youzan\ZanHttpDemo\Service\Order as OrderService;
-use Zan\Framework\Network\Http\Client;
-use Zan\Framework\Foundation\Core\Config;
-//use Zan\Framework\Foundation\Domain\HttpController as Controller;
-//use Com\Youzan\ZanHttpDemo\Service\Order as OrderService;
-use Zan\Framework\Network\Connection\ConnectionManager;
 use Zan\Framework\Store\Facade\Cache;
 use Zan\Framework\Store\Facade\Db;
 use Zan\Framework\Store\Database\Sql\SqlMapInitiator;
-use Zan\Framework\Foundation\Core\ConfigLoader;
 
 class BookController extends Controller {
 
@@ -98,7 +90,9 @@ class BookController extends Controller {
     }
     public function bb()
     {
+        var_dump(111111111111111);
         $result = (yield Cache::set('pf.test.test', 'abc-0126', ['ab123', '098kkss']));
+        var_dump($result);
         yield $this->output(var_export($result, true));
     }
 

@@ -3,7 +3,7 @@
 return [
     'client' => [
         'host' => '127.0.0.1',
-        'port' => '8020',
+        'port' => '8050',
         'timeout' => 5,
         'persistent' => false,
         'config'    => [
