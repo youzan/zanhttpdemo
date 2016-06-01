@@ -9,9 +9,8 @@ use Com\Youzan\ZanHttpDemo\Service\Order as OrderService;
 use Zan\Framework\Store\Facade\Cache;
 use Zan\Framework\Store\Facade\Db;
 use Zan\Framework\Store\Database\Sql\SqlMapInitiator;
+use Zan\Framework\Utilities\Types\Time;
 use Zan\Framework\Network\Common\HttpClient;
-use Zan\Framework\Network\ServerManager\ServerDiscovery;
-use Zan\Framework\Network\ServerManager\LoadBalancingManager;
 
 class BookController extends Controller {
 
@@ -93,9 +92,7 @@ class BookController extends Controller {
     }
     public function bb()
     {
-        var_dump(111111111111111);
         $result = (yield Cache::set('pf.test.test', 'abc-0126', ['ab123', '098kkss']));
-        var_dump($result);
         yield $this->output(var_export($result, true));
     }
 
