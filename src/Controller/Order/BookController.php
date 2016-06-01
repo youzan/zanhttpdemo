@@ -10,6 +10,7 @@ use Zan\Framework\Store\Facade\Cache;
 use Zan\Framework\Store\Facade\Db;
 use Zan\Framework\Store\Database\Sql\SqlMapInitiator;
 use Zan\Framework\Utilities\Types\Time;
+use Zan\Framework\Network\Common\HttpClient;
 
 class BookController extends Controller {
 
@@ -67,7 +68,7 @@ class BookController extends Controller {
 //        yield DB::beginTransaction();
         $data = [
             'insert' => [
-                'kdt_id' => 111, 'aaaa' => 1211, 'buyer_id' => 2, 'old_level_id' => 3, 'new_level_id' => 4, 'operation' => 'insert.test', 'operation_admin_id' => 6,  'create_time' => time(),  'update_time' => time(),  'remark' => '11导入测试',
+                'kdt_id' => 111, 'buyer_id' => 2, 'old_level_id' => 3, 'new_level_id' => 4, 'operation' => 'insert.test', 'operation_admin_id' => 6,  'create_time' => time(),  'update_time' => time(),  'remark' => '11导入测试',
 
             ]
 
@@ -99,6 +100,14 @@ class BookController extends Controller {
     {
         $result = (yield Cache::get('pf.test.test', ['ab123', '098kkss']));
 
+        yield $this->output(var_export($result, true));
+    }
+
+    public function hh()
+    {
+        $serverDis = new ServerDiscovery();
+        $result = (yield $serverDis->start());
+        $c = (yield LoadBalancingManager::getInstance()->get());
         yield $this->output(var_export($result, true));
     }
 
