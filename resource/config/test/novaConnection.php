@@ -15,4 +15,7 @@ return [
         'package_body_offset' => 0,
         'open_nova_protocol' => 1
     ],
+    'pool'  => [
+        'heartbeat-time' => 5000,
+    ],
 ];
