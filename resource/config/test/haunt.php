@@ -18,11 +18,10 @@ return [
     'watch' => [
         'host' => '192.168.66.237',
         'port' => 2379,
-        'timeout' => 2,
+        'timeout' => 10,
         'uri' => '/v2/keys',
         'protocol' => 'nova',
         'namespace' => 'com.youzan.service',
         'server_name' => 'pf-api',
-        'loop-time' => 4000
     ],
 ];

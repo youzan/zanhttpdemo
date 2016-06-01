@@ -47,10 +47,9 @@
         }
     ],
     "require": {
-        "zanphp/zan": "dev-master",
-        "zanphp/novatcpdemo": "dev-dev",
-        "zanphp/nova":"dev-master",
-        "php-lib/iron-lib-async":"dev-master",
+	"zanphp/zan": "dev-feature/tcp-multiplexing",
+        "zanphp/nova":"dev-feature/tcp-multiplexing",
+        "php-lib/iron-lib-async":"dev-feature/tcp-multiplexing",
         "symfony/console": "3.1",
         "elasticsearch/yz-elasticsearch-client": "dev-master"
     },
