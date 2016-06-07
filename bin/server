@@ -1,0 +1,122 @@
+#!/usr/bin/env bash
+
+SERVER_BIN=$(dirname $_)/httpd
+SERVER_PID=/tmp/ZanHttpDemo.pid
+
+wait_for_pid () {
+	try=0
+
+	while test $try -lt 35 ; do
+
+		case "$1" in
+			'created')
+			if [ -f "$2" ] ; then
+				try=''
+				break
+			fi
+			;;
+
+			'removed')
+			if [ ! -f "$2" ] ; then
+				try=''
+				break
+			fi
+			;;
+		esac
+
+		echo -n .
+		try=`expr $try + 1`
+		sleep 1
+
+	done
+
+}
+
+case "$1" in
+	start)
+		echo -n "Starting server "
+
+		$SERVER_BIN
+
+		if [ "$?" != 0 ] ; then
+			echo " failed"
+			exit 1
+		fi
+
+		wait_for_pid created $SERVER_PID
+
+		if [ -n "$try" ] ; then
+			echo " failed"
+			exit 1
+		else
+			echo " done"
+		fi
+	;;
+
+	stop)
+		echo -n "Gracefully shutting down server "
+
+		if [ ! -r $SERVER_PID ] ; then
+			echo "warning, no pid file found - server is not running ?"
+			exit 1
+		fi
+
+		# mac bug
+        if [ `uname` = "Darwin" ] ; then
+            kill -TERM `cat $SERVER_PID`
+            sleep 2
+            kill -KILL `cat $SERVER_PID`
+            rm $SERVER_PID
+		else
+		    kill -TERM `cat $SERVER_PID`
+		fi
+
+		wait_for_pid removed $SERVER_PID
+
+		if [ -n "$try" ] ; then
+			echo " failed. "
+			exit 1
+		else
+			echo " done"
+		fi
+	;;
+
+	status)
+		if [ ! -r $SERVER_PID ] ; then
+			echo "server is stopped"
+			exit 0
+		fi
+
+		PID=`cat $SERVER_PID`
+		if ps -p $PID | grep -q $PID; then
+			echo "server (pid $PID) is running..."
+		else
+			echo "server dead but pid file exists"
+		fi
+	;;
+
+	restart)
+		$0 stop
+		$0 start
+	;;
+
+	reload)
+
+		echo -n "Reload server "
+
+		if [ ! -r $SERVER_PID ] ; then
+			echo "warning, no pid file found - server is not running ?"
+			exit 1
+		fi
+
+		kill -USR1 `cat $SERVER_PID`
+
+		echo " done"
+	;;
+
+	*)
+		echo "Usage: $0 {start|stop|restart|reload|status}"
+		exit 1
+	;;
+
+esac
