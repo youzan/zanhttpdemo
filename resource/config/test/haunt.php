@@ -6,22 +6,33 @@
  * Time: 下午5:24
  */
 return [
+    'modules' => [
+        'pf-api',
+    ],
     'get' => [
         'host' => '192.168.66.237',
         'port' => 2379,
-        'timeout' => 35,
+        'timeout' => 35000,
         'uri' => '/v2/keys',
         'protocol' => 'nova',
         'namespace' => 'com.youzan.service',
-        'server_name' => 'pf-api'
+        'loop_time' => 1000,
     ],
     'watch' => [
         'host' => '192.168.66.237',
         'port' => 2379,
-        'timeout' => 10,
+        'timeout' => 10000,
         'uri' => '/v2/keys',
         'protocol' => 'nova',
         'namespace' => 'com.youzan.service',
-        'server_name' => 'pf-api',
+        'loop_time' => 5000,
+    ],
+    'register' => [
+        'host' => '192.168.66.237',
+        'port' => 8687,
+        'timeout' => 10000,
+        'uri' => '/register',
+        'protocol' => 'nova',
+        'namespace' => 'com.youzan.service',
     ],
 ];
