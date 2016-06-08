@@ -22,7 +22,7 @@ return [
     ],
     'request_timeout' => 30 * 1000,
     'session' => [
-        'run' => true,
+        'run' => false,
         'kv' => 'test.test.test',
         'ttl' => 3600 * 24
     ],

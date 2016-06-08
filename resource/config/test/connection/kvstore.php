@@ -16,7 +16,7 @@ return [
         ],
         'pool'  => [
             'keeping-sleep-time' => 10000,
-            'init-connection'=> 1,
+            'init-connection'=> 0,
         ],
     ],
 ];
