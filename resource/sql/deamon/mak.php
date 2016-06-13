@@ -6,6 +6,12 @@ return [
         'limit'   => [],
         'sql'     => 'INSERT INTO member_log #INSERT#',
     ],
+
+    'get'=>[
+        'require' => [],
+        'limit'   => [],
+        'sql'     => 'select * from member_log where id = 1',
+    ],
     'batch_insert' => [
         'require' => [],
         'limit'   => [],
