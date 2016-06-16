@@ -55,9 +55,9 @@
         }
     ],
     "require": {
-	"zanphp/zan": "dev-feature/tcp-multiplexing",
-        "zanphp/nova":"dev-feature/tcp-multiplexing",
-        "php-lib/iron-lib-async":"dev-feature/tcp-multiplexing",
+	"zanphp/zan": "dev-master",
+        "zanphp/nova":"dev-master",
+        "php-lib/iron-lib-async":"dev-master",
         "symfony/console": "3.1",
         "elasticsearch/yz-elasticsearch-client": "dev-master",
         "zanphp/novatcpdemo": "dev-dev",

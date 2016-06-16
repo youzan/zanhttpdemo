@@ -73,8 +73,9 @@ class BookController extends Controller {
             ]
 
         ];
+        $result = (yield Cache::set('pf.test.test', 'abc-01267', ['ab123', '098kkss']));
         try {
-            $a = (yield DB::execute('deamon.mak.insert',$data));
+            $a = (yield DB::execute('deamon.mak.get',$data));
             yield $this->output(var_export($a, true));
         } catch (\Exception $e) {
             echo $e->getMessage();
@@ -92,7 +93,7 @@ class BookController extends Controller {
     }
     public function bb()
     {
-        $result = (yield Cache::set('pf.test.test', 'abc-0126', ['ab123', '098kkss']));
+        $result = (yield Cache::set('pf.test.test', 'abc-01267', ['ab123', '098kkss']));
         yield $this->output(var_export($result, true));
     }
 
