@@ -7,7 +7,7 @@
  */
 return [
     'modules' => [
-        'pf-api',
+        'pf-api'
     ],
     'get' => [
         'host' => '192.168.66.237',
@@ -30,8 +30,8 @@ return [
     'register' => [
         'host' => '192.168.66.237',
         'port' => 8687,
-        'timeout' => 10000,
         'uri' => '/register',
+        'timeout' => 10000,
         'protocol' => 'nova',
         'namespace' => 'com.youzan.service',
     ],
