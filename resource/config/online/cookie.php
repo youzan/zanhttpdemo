@@ -6,7 +6,7 @@
  * Time: 上午9:58
  */
 return [
-    'domain' => '.xxxx.com',
+    'domain' => '.example.com',
     'path' => '/',
     'expire' => 2592000,
     'secure' => FALSE,
