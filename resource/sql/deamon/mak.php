@@ -34,7 +34,7 @@ return [
             SELECT #COUNT# FROM member_log
             WHERE 1
             AND `kdt_id` = #{kdt_id}
-            AND `buyer_id` in #{buyer_id}
+            AND `buyer_id` = #{buyer_id}
         ",
     ],
 
