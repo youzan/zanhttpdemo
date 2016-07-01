@@ -9,9 +9,6 @@ class IndexController extends Controller {
 
     public function index()
     {
-        $demoService = new DemoService();
-        $value = (yield $demoService->echoBack('hahaha'));
-        var_dump($value);
-        yield $this->output('success'); 
+        yield $this->output('success');
     }
 }
