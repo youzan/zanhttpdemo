@@ -3,11 +3,14 @@
 namespace Com\Youzan\ZanHttpDemo\Controller\Order;
 
 use Com\Youzan\NovaTcpDemo\Service\DemoService;
+use Mockery\Exception;
 use Zan\Framework\Foundation\Domain\HttpController as Controller;
 use Com\Youzan\ZanHttpDemo\Service\Order as OrderService;
-use Zan\Framework\Network\Http\Client;
+use Zan\Framework\Store\Facade\Cache;
 use Zan\Framework\Store\Facade\Db;
 use Zan\Framework\Store\Database\Sql\SqlMapInitiator;
+use Zan\Framework\Utilities\Types\Time;
+use Zan\Framework\Network\Common\HttpClient;
 
 class BookController extends Controller {
 
@@ -61,19 +64,62 @@ class BookController extends Controller {
         ];
 
         SqlMapInitiator::getInstance()->init();
+//        $a = (yield DB::execute('deamon.mak.update_new_level_id', ['data' => ['old_level_id' => 123], 'and' => [['new_level_id', '=', '', 'new_level_id+3']], 'var' => ['id' => 827]]));
+
+//        yield $this->output(var_export($a, true));
+//        echo 'start:'."\r\n";
+//        $a = (yield DB::execute('deamon.mak.insert',$data));
+//
+//        echo 'end;'."\r\n";
+
+//        yield DB::beginTransaction();
+        $data = [
+            'insert' => [
+                'kdt_id' => 111, 'buyer_id' => 2, 'old_level_id' => 3, 'new_level_id' => 4, 'operation' => 'insert.test', 'operation_admin_id' => 6,  'create_time' => time(),  'update_time' => time(),  'remark' => '11导入测试',
+
+            ]
+
+        ];
+        $result = (yield Cache::set('pf.test.test', 'abc-01267', ['ab123', '098kkss']));
+        try {
+            $a = (yield DB::execute('deamon.mak.get',$data));
+            yield $this->output(var_export($a, true));
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+        }
 
         $a = (yield DB::execute('deamon.mak.count_sql_id1_2_all', $data));
 
         yield $this->output(var_export($a, true));
 //        yield $this->output(var_export(212121, true));
+
     }
 
-    public function test(){
-        $time = time();
-        $service = new DemoService();
-        $result = (yield $service->echoBack('hello demo'));
-        $end = time();
-        yield $this->output([$time,$end]);
+    public function bb()
+    {
+        $result = (yield Cache::set('pf.test.test', 'abc-01267', ['ab123', '098kkss']));
+        yield $this->output(var_export($result, true));
     }
+
+    public function cc()
+    {
+        $result = (yield Cache::get('pf.test.test', ['ab123', '098kkss']));
+
+        yield $this->output(var_export($result, true));
+    }
+
+    private function map_keys($keys, $config){
+        $format = $config['key'];
+        if($keys === null){
+            return $format;
+        }
+
+        if(!is_array($keys)){
+            $keys = [$keys];
+        }
+        $key = call_user_func_array('sprintf', array_merge([$format], $keys));
+        return $key;
+    }
+
 
 }

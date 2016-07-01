@@ -6,6 +6,12 @@ return [
         'limit'   => [],
         'sql'     => 'INSERT INTO member_log #INSERT#',
     ],
+
+    'get'=>[
+        'require' => [],
+        'limit'   => [],
+        'sql'     => 'select * from member_log where id = 1',
+    ],
     'batch_insert' => [
         'require' => [],
         'limit'   => [],
@@ -37,5 +43,18 @@ return [
             AND `buyer_id` = #{buyer_id}
         ",
     ],
-
+    'update_new_level_id' => [
+        'sql' => "
+            UPDATE member_log set #DATA#, #AND#
+            WHERE 1
+            AND `id` = #{id}
+        ",
+    ],
+    'select_id' => [
+        'sql' => "
+            SELECT * FROM member_log
+            WHERE 1
+            AND `id` = #{id}
+        ",
+    ]
 ];

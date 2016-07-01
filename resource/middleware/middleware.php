@@ -10,6 +10,8 @@ return [
 
     ],
     'match'     => [
-
+        ['/market\/.*/', 'acl'],
+        ['/goods\/.*/', 'acl'],
+        ['/shop\/.*/', 'acl'],
     ],
 ];

@@ -1,4 +1,4 @@
-#!/usr/bin/env /usr/bin/php
+#!/usr/bin/env php
 <?php
 
 /** @var \Zan\Framework\Foundation\Application $app */
