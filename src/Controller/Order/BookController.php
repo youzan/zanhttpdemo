@@ -11,6 +11,7 @@ use Zan\Framework\Store\Facade\Db;
 use Zan\Framework\Store\Database\Sql\SqlMapInitiator;
 use Zan\Framework\Utilities\Types\Time;
 use Zan\Framework\Network\Common\HttpClient;
+use Zan\Framework\Sdk\Log\Log;
 
 class BookController extends Controller {
 
@@ -75,8 +76,13 @@ class BookController extends Controller {
 //        yield DB::beginTransaction();
         $a = (yield DB::execute('deamon.mak.count_sql_id1_2_all', $data));
 
-        yield $this->output(var_export($a, true));
 //        yield $this->output(var_export(212121, true));
+        yield Log::make('debug')->info('mergeCustomerBasic 给U1添加 merge_yz_uid 成功', [
+            'params' => func_get_args()
+        ]);
+        $a = (yield DB::execute('deamon.mak.count_sql_id1_2_all', $data));
+
+        yield $this->output(var_export($a, true));
 
     }
 
