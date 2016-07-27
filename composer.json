@@ -9,22 +9,26 @@
             "type": "git",
             "url": "git@gitlab.qima-inc.com:php-lib/nova-asnyc.git"
         },
+	{
+            "type": "git",
+            "url": "http://gitlab.qima-inc.com/php-lib/iron-lib-async.git"
+        },
         {
             "type": "git",
             "url": "git@gitlab.qima-inc.com:php-lib/nova-tcpdemo.git"
         },
 
-        {
+	{
             "type": "git",
-            "url": "http://git.qima-inc.com/php-3rd-lib/qiniu-php-sdk.git"
+            "url": "http://gitlab.qima-inc.com/php-lib/nsq-async.git"
         },
         {
             "type": "git",
-            "url": "http://git.qima-inc.com/php-3rd-lib/league-climate.git"
+            "url": "http://gitlab.qima-inc.com/php-3rd-lib/symfony-console.git"
         },
-        {
+	{
             "type": "git",
-            "url": "http://git.qima-inc.com/php-3rd-lib/seld-cli-prompt.git"
+            "url": "http://gitlab.qima-inc.com/php-lib/nsq-async.git"
         },
         {
             "packagist": false
@@ -35,10 +39,9 @@
         }
     ],
     "require": {
-        "zanphp/zan": "dev-dev",
-        "zanphp/novatcpdemo": "dev-dev",
-        "zanphp/nova": "dev-dev"
-
+        "zanphp/zan": "dev-master",
+	    "zanphp/nova":"dev-master",
+        "symfony/console": "3.1"
     },
     "autoload": {
         "psr-4": {
@@ -57,6 +60,7 @@
         "mockery/mockery": "~0.9.2"
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "secure-http": false
     }
 }

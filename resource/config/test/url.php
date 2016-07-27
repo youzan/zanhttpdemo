@@ -1,6 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
+<<<<<<< HEAD
  * User: heize
  * Date: 16/5/3
  * Time: 上午10:04
