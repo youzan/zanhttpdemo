@@ -39,7 +39,7 @@
         }
     ],
     "require": {
-        "zanphp/zan": "dev-master",
+        "zanphp/zan": "dev-hotfix/file_log_add_yield",
 	    "zanphp/nova":"dev-master",
         "symfony/console": "3.1"
     },
