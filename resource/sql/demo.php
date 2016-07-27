@@ -25,5 +25,13 @@ return [
             #LIMIT#
         ",
     ],
+    'count_sql_id1_2_all'      => [
+        'sql'           => "
+            SELECT #COUNT# FROM member_log
+            WHERE 1
+            AND `kdt_id` = #{kdt_id}
+            AND `buyer_id` = #{buyer_id}
+        ",
+    ],
 
 ];

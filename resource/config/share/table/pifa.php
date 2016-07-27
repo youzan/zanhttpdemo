@@ -62,5 +62,8 @@ return [
         'user_goods_record',
         'user_select',
         'user_shop_record',
-    ]
+    ],
+    'mysql.koudaitong' => [
+        'fans'
+    ],
 ];

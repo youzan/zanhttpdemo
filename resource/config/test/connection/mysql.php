@@ -16,7 +16,7 @@ return [
         'pool'  => [
             'maximum-connection-count' => 50,
             'minimum-connection-count' => 10,
-            'heartbeat-time' => 35000,
+            'heartbeat-time' => 5000,
             'init-connection'=> 10,
         ],
     ],

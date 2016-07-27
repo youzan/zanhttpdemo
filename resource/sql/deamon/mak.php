@@ -43,6 +43,20 @@ return [
             AND `buyer_id` = #{buyer_id}
         ",
     ],
+    'select_sql_id1_2_all'      => [
+        'sql'           => "
+            SELECT * FROM member_log
+            WHERE 1
+            AND `kdt_id` = #{kdt_id}
+            AND `buyer_id` = #{buyer_id}
+        ",
+    ],
+    'select_sql_id1_2_all_aaa'      => [
+        'sql'           => "
+            SELECT * FROM member_log
+            WHERE 1 #WHERE# limit 1
+        ",
+    ],
     'update_new_level_id' => [
         'sql' => "
             UPDATE member_log set #DATA#, #AND#
@@ -56,5 +70,10 @@ return [
             WHERE 1
             AND `id` = #{id}
         ",
+    ],
+    'row_fans_get'  => [
+        'sql' => ' SELECT fans_id,user_id,taobao_user_id,mp_id,fans_weixin_openid,fans_nickname,`comment` FROM fans
+            WHERE 1
+            AND `fans_id` = #{fans_id}',
     ]
 ];

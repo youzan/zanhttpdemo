@@ -10,7 +10,7 @@ return [
     'host'          => '127.0.0.1',
     'port'          => '8030',
     'config' => [
-        'worker_num'    => 2,
+        'worker_num'    => 1,
     ],
     'monitor' =>[
         'max_request'   => 100000,            //

@@ -73,21 +73,6 @@ class BookController extends Controller {
 //        echo 'end;'."\r\n";
 
 //        yield DB::beginTransaction();
-        $data = [
-            'insert' => [
-                'kdt_id' => 111, 'buyer_id' => 2, 'old_level_id' => 3, 'new_level_id' => 4, 'operation' => 'insert.test', 'operation_admin_id' => 6,  'create_time' => time(),  'update_time' => time(),  'remark' => '11导入测试',
-
-            ]
-
-        ];
-        $result = (yield Cache::set('pf.test.test', 'abc-01267', ['ab123', '098kkss']));
-        try {
-            $a = (yield DB::execute('deamon.mak.get',$data));
-            yield $this->output(var_export($a, true));
-        } catch (\Exception $e) {
-            echo $e->getMessage();
-        }
-
         $a = (yield DB::execute('deamon.mak.count_sql_id1_2_all', $data));
 
         yield $this->output(var_export($a, true));
