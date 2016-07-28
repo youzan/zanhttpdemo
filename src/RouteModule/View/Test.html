@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<?php echo "<h1>Test Result:</h1></br>" . $testResult . '</br>'; ?>
+
+<?php
+    echo "<h1>params from route : " . '</br></h1>';
+    foreach($routeParams as $key => $value) {
+        echo $key . ' : ' . $value . '</br>';
+    }
+?>
+</body>
+</html>
