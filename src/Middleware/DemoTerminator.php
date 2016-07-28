@@ -10,6 +10,6 @@ class DemoTerminator implements RequestTerminator
 {
     public function terminate(Request $request, Response $response, Context $context)
     {
-        yield 'demo terminate';
+        var_dump(__CLASS__, __FUNCTION__);
     }
 } 

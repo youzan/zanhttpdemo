@@ -9,6 +9,6 @@ class DemoFilter implements RequestFilter
 {
     public function doFilter(Request $request, Context $context)
     {
-        yield new \Zan\Framework\Network\Http\Response\Response('demo filter response');
+        var_dump(__CLASS__, __FUNCTION__);
     }
 } 
