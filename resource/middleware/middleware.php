@@ -7,6 +7,6 @@ return [
         ],
     ],
     'match'     => [
-        ['^index/.*', 'demo'],
+        ['^route/.*', 'demo'],
     ],
 ];
