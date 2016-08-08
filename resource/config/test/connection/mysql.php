@@ -8,10 +8,10 @@
 return [
     'default_write' => [
         'engine'=> 'mysqli',
-        'host' => '192.168.66.202',
-        'user' => 'test_koudaitong',
-        'password' => 'nPMj9WWpZr4zNmjz',
-        'database' => 'pf',
+        'host' => '10.9.34.172',
+        'user' => 'pifa',
+        'password' => 'pifa',
+        'database' => 'pifa',
         'port' => '3306',
         'pool'  => [
             'maximum-connection-count' => 50,
