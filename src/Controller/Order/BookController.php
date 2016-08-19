@@ -12,6 +12,7 @@ use Zan\Framework\Store\Database\Sql\SqlMapInitiator;
 use Zan\Framework\Utilities\Types\Time;
 use Zan\Framework\Network\Common\HttpClient;
 use Zan\Framework\Sdk\Log\Log;
+use Com\Youzan\ZanHttpDemo\Service\TestJob;
 
 class BookController extends Controller {
 
@@ -110,6 +111,13 @@ class BookController extends Controller {
         }
         $key = call_user_func_array('sprintf', array_merge([$format], $keys));
         return $key;
+    }
+
+    public function pp()
+    {
+        $job = new TestJob();
+        $result = (yield $job->testPublish(['aaaa' => 'bbbbbb']));
+        yield $this->output(var_export($result, true));
     }
 
 
