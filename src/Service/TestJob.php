@@ -24,8 +24,10 @@ class TestJob extends JobAbstract
 
     public static function makeData($test)
     {
+        var_dump($test);
         return [
-            'test' => 111111
+            'test' => $test,
+            'key' => $test['key'],
         ];
     }
 
@@ -43,7 +45,7 @@ class TestJob extends JobAbstract
     {
         return sprintf(
             static::$keyFormat,
-            $data['test']
+            $data['test']['key']
         );
     }
 

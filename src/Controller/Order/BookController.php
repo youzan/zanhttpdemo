@@ -116,9 +116,16 @@ class BookController extends Controller {
     public function pp()
     {
         $job = new TestJob();
-        $result = (yield $job->testPublish(['aaaa' => 'bbbbbb']));
+        $result = (yield $job->testPublish(['aaaa' => 'bbbbbb', 'key' => 2]));
         yield $this->output(var_export($result, true));
     }
 
+
+    public function file()
+    {
+//        var_dump(iconv('UTF-16', 'UTF-8', $this->request->getContent()));
+        yield $this->output(var_export(1, true));
+//        yield $this->r(0,'更新成功',0);
+    }
 
 }
