@@ -47,7 +47,7 @@
         }
     ],
     "require": {
-        "zanphp/zan": "dev-hotfix/redis_connect_error_v1",
+        "zanphp/zan": "dev-master",
 	    "zanphp/nova":"dev-master",
         "nova-service/material":"dev-master",
         "symfony/console": "3.1"
