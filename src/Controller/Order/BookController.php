@@ -6,13 +6,16 @@ use Com\Youzan\NovaTcpDemo\Service\DemoService;
 use Mockery\Exception;
 use Zan\Framework\Foundation\Domain\HttpController as Controller;
 use Com\Youzan\ZanHttpDemo\Service\Order as OrderService;
+use Zan\Framework\Network\Common\Client;
 use Zan\Framework\Store\Facade\Cache;
 use Zan\Framework\Store\Facade\Db;
 use Zan\Framework\Store\Database\Sql\SqlMapInitiator;
+use Zan\Framework\Utilities\Types\Json;
 use Zan\Framework\Utilities\Types\Time;
 use Zan\Framework\Network\Common\HttpClient;
 use Zan\Framework\Sdk\Log\Log;
 use Com\Youzan\ZanHttpDemo\Service\TestJob;
+use Com\Youzan\Material\General\Service\TokenService;
 
 class BookController extends Controller {
 
@@ -89,7 +92,7 @@ class BookController extends Controller {
 
     public function bb()
     {
-        $result = (yield Cache::set('pf.test.test', 'abc-01267', ['ab123', '098kkss']));
+        $result = (yield Cache::set('pf.test.test', ['abc-01267', 'aaa'], ['ab123', '098kkss']));
         yield $this->output(var_export($result, true));
     }
 
@@ -126,6 +129,53 @@ class BookController extends Controller {
 //        var_dump(iconv('UTF-16', 'UTF-8', $this->request->getContent()));
         yield $this->output(var_export(1, true));
 //        yield $this->r(0,'更新成功',0);
+    }
+
+    public function pic()
+    {
+        $pictures = [
+            'https://cbu01.alicdn.com/img/ibank/2016/328/603/2875306823_892503291.jpg',
+            'https://cbu01.alicdn.com/img/ibank/2016/764/062/2878260467_892503291.jpg',
+            'https://cbu01.alicdn.com/img/ibank/2016/764/752/2878257467_892503291.jpg',
+            'https://cbu01.alicdn.com/img/ibank/2016/054/768/2876867450_892503291.jpg',
+            'https://cbu01.alicdn.com/img/ibank/2016/067/452/2878254760_892503291.jpg',
+            'https://cbu01.alicdn.com/img/ibank/2016/013/513/2875315310_892503291.jpg',
+            'https://cbu01.alicdn.com/img/ibank/2016/995/903/2875309599_892503291.jpg'
+        ];
+        $coroutines = [];
+        foreach ($pictures as $picture) {
+            $coroutines[] = $this->uploadPictureToQiniu(3311, $picture);
+        }
+
+        $newPics = (yield parallel($coroutines));
+
+
+        var_dump($newPics);
+        yield $this->output(var_export($newPics, true));
+    }
+
+    private function uploadPictureToQiniu($kdtId, $picture)
+    {
+        $tokenService = new TokenService();
+        $data = (yield $tokenService->fetch($kdtId, 'kdt_img_test', $picture, 0));
+        if (null == $data) {
+            yield null;
+            return;
+        }
+        $data = Json::decode($data, true);
+        if (isset($data['code']) && 0 == $data['code']) {
+            yield isset($data['data']['attachment_full_url']) ? $data['data'] : null;
+            return;
+        }
+        yield null;
+    }
+
+    public function clc()
+    {
+        $a = (yield Client::call('account.team.getTeamInfo', ['kdt_id' => 3311]));
+        var_dump($a);
+        yield $this->output(var_export($a, true));
+
     }
 
 }

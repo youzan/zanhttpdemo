@@ -7,7 +7,7 @@
  */
 return [
     'app_names' => [
-//        'TcpDemo'
+        'material-api'
     ],
     'discovery' => [
         'host' => '192.168.66.237',

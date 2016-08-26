@@ -8,8 +8,8 @@
 return [
     'default_write' => [
         'engine'=> 'redis',
-        'host' => '192.168.66.202',
-        'port' => 6379,
+        'host' => '10.9.22.85',
+        'port' => 6602,
         'pool'  => [
             'maximum-connection-count' => '50',
             'minimum-connection-count' => '10',
