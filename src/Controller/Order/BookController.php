@@ -8,6 +8,7 @@ use Zan\Framework\Foundation\Domain\HttpController as Controller;
 use Com\Youzan\ZanHttpDemo\Service\Order as OrderService;
 use Zan\Framework\Network\Common\Client;
 use Zan\Framework\Store\Facade\Cache;
+use Zan\Framework\Store\Facade\KV;
 use Zan\Framework\Store\Facade\Db;
 use Zan\Framework\Store\Database\Sql\SqlMapInitiator;
 use Zan\Framework\Utilities\Types\Json;
@@ -81,10 +82,10 @@ class BookController extends Controller {
         $a = (yield DB::execute('deamon.mak.count_sql_id1_2_all', $data));
 
 //        yield $this->output(var_export(212121, true));
-        yield Log::make('debug')->info('mergeCustomerBasic 给U1添加 merge_yz_uid 成功', [
-            'params' => func_get_args()
-        ]);
-        $a = (yield DB::execute('deamon.mak.count_sql_id1_2_all', $data));
+//        yield Log::make('debug')->info('mergeCustomerBasic 给U1添加 merge_yz_uid 成功', [
+//            'params' => func_get_args()
+//        ]);
+//        $a = (yield DB::execute('deamon.mak.count_sql_id1_2_all', $data));
 
         yield $this->output(var_export($a, true));
 
@@ -93,6 +94,16 @@ class BookController extends Controller {
     public function bb()
     {
         $result = (yield Cache::set('pf.test.test', ['abc-01267', 'aaa'], ['ab123', '098kkss']));
+        yield $this->output(var_export($result, true));
+    }
+
+    public function kv()
+    {
+        $result = (yield KV::set('test.cc', 11, '8888888888888'));
+        var_dump('set kv=============', $result);
+//        yield $this->output(var_export($result, true));
+        $result = (yield KV::get('test.cc', ['a','b']));
+        var_dump('get kv ===========', $result);
         yield $this->output(var_export($result, true));
     }
 
@@ -177,5 +188,12 @@ class BookController extends Controller {
         yield $this->output(var_export($a, true));
 
     }
+
+    public function ip()
+    {
+        var_dump($this->request);
+        yield $this->output(var_export($this->request->getClientIps(), true));
+    }
+
 
 }

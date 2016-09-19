@@ -9,11 +9,12 @@
 return [
     'trace' => [
         'engine'=> 'tcp',
-        'host' => '10.9.53.85',
+        'host' => '10.9.37.103',
         'port' => '2280',
 //        'host' => '172.17.10.77',
 //        'port' => '2280',
         'timeout' => 5000,
+        'hasRecv' => false,
         'config'    => [
             'open_length_check' => 1,
             'package_length_type' => 'N',

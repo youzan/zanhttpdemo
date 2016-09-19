@@ -7,7 +7,7 @@
  */
 return [
     'app_names' => [
-        'material-api',
+//        'material-api',
     ],
     'novaApi' => [
         'material-api' => [
