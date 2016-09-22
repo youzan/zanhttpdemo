@@ -15,7 +15,7 @@ use Zan\Framework\Utilities\Types\Json;
 use Zan\Framework\Utilities\Types\Time;
 use Zan\Framework\Network\Common\HttpClient;
 use Zan\Framework\Sdk\Log\Log;
-use Com\Youzan\ZanHttpDemo\Service\TestJob;
+//use Com\Youzan\ZanHttpDemo\Service\TestJob;
 use Com\Youzan\Material\General\Service\TokenService;
 
 class BookController extends Controller {

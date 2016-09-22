@@ -7,10 +7,4 @@
  */
 
 return [
-    Com\Youzan\ZanHttpDemo\Service\TestJob::TOPIC => [
-        Com\Youzan\ZanHttpDemo\Service\TestJob::CHANNEL => [
-            'consumer' => Com\Youzan\ZanHttpDemo\Service\TestJob::class,
-            'num' => 1,
-        ],
-    ]
 ];
