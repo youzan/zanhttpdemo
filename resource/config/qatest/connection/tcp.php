@@ -9,7 +9,7 @@
 return [
     'trace' => [
         'engine'=> 'tcp',
-        'host' => '10.9.37.103',
+        'host' => '127.0.0.1',
         'port' => '2280',
         'timeout' => 5000,
         'hasRecv' => false,
