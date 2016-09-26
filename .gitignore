@@ -36,3 +36,4 @@ iron.iml
 composer.lock
 /vendor
 .private/
+/resource/config/.private/
