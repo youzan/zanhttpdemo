@@ -7,7 +7,7 @@ return [
     ],
     //拉取服务配置 固定配置，业务无需修改
     'discovery' => [
-        'host' => 'etcd0-qa.s.qima-inc.com:',
+        'host' => 'etcd0-qa.s.qima-inc.com',
         'port' => 2379,
         'timeout' => 30000,
         'uri' => '/v2/keys',
@@ -17,7 +17,7 @@ return [
     ],
     //监听服务配置 固定配置，业务无需修改
     'watch' => [
-        'host' => 'etcd0-qa.s.qima-inc.com:',
+        'host' => 'etcd0-qa.s.qima-inc.com',
         'port' => 2379,
         'timeout' => 30000,
         'uri' => '/v2/keys',
@@ -31,7 +31,7 @@ return [
     ],
     //服务注册配置 固定配置业务无需修改
     'register' => [
-        'host' => 'etcd0-qa.s.qima-inc.com:',
+        'host' => 'etcd0-qa.s.qima-inc.com',
         'port' => 8687,
         'uri' => '/register',
         'timeout' => 30000,
