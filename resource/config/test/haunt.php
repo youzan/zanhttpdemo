@@ -3,7 +3,7 @@
 return [
     //拉取需要的服务列表，此处填写注册到注册中心的的app name，如果无需拉去任何服务，app_names为空array即可
     'app_names' => [
-        'NovaTcpDemo' //本地开发环境不需要这个服务
+        // 'NovaTcpDemo'
     ],
     //拉取服务配置 固定配置，业务无需修改
     'discovery' => [
