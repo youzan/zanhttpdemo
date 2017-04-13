@@ -59,5 +59,6 @@
     "config": {
         "preferred-install": "dist",
         "secure-http": false
-    }
+    },
+    "minimum-stability": "dev"
 }
