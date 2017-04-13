@@ -8,7 +8,7 @@
 return [
     'app_names' => [
         // material-api,
-        'TcpDemo',
+        //'TcpDemo',
     ],
     'novaApi' => [
         'TcpDemo' => [
