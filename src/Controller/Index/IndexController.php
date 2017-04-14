@@ -9,5 +9,11 @@ class IndexController extends Controller {
     public function index()
     {
         yield $this->output('success');
+
+    }
+
+    public function showTpl()
+    {
+        yield $this->display("Demo/test/test");
     }
 }
