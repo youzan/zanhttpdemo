@@ -10,9 +10,6 @@ return [
     'demo_sql_id1_1'      => [
         'sql'           => "
             SELECT * FROM member_log
-            WHERE 1
-            AND `kdt_id` = #{kdt_id}
-            AND `buyer_id` = #{buyer_id}
             #LIMIT#
         ",
     ],
