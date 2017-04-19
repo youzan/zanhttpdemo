@@ -17,7 +17,7 @@ class HttpCall {
             'with_source'  => false
         ];
 
+        //trade.order.detail.byOrderNo对应包zan-config/zan/Apiconfig.php中的配置,新增url时需要修改配置
         yield Client::call('trade.order.detail.byOrderNo', $option);
     }
-
 }

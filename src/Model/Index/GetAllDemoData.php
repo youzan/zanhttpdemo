@@ -15,6 +15,7 @@ class GetAllDemoData {
         $data = [
             'limit' => 2
         ];
+        //demo.demo_sql_id1_1对应resource/sql/demo.php中的配置
         $result = (yield Db::execute("demo.demo_sql_id1_1", $data));
         var_dump($result);
     }

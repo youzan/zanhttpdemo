@@ -19,21 +19,15 @@ class ExceptionController extends Controller
     public function testInvalidRoute()
     {
         throw new InvalidRouteException();
-        $this->assign('testResult', 'Failed');
-        yield $this->display('test/test');
     }
 
     public function testPageNotFound()
     {
-        throw new PageNotFoundException();
-        $this->assign('testResult', 'Failed');
-        yield $this->display('test/test');
+        throw new PageNotFoundException('This Page is not Found');
     }
 
     public function testRedirect()
     {
-        throw new RedirectException('https://youzan.com', 'test');
-        $this->assign('testResult', 'Failed');
-        yield $this->display('test/test');
+        throw new RedirectException('https://youzan.com', 'Test Redirect');
     }
 }
