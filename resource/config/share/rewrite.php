@@ -7,5 +7,5 @@
  */
 
 return [
-    'order.*' => 'index/index/index'
+    //'order.*' => 'index/index/index'
 ];

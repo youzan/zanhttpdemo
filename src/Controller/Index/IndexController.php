@@ -14,6 +14,9 @@ class IndexController extends Controller {
         $response =  $this->output('success');
         //设置响应信息头部
         $response->withHeaders(['Content-Type' => 'text/javascript']);
+
+
+        var_dump($this->request->server());
         yield $response;
     }
 
