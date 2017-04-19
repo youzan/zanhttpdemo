@@ -1,16 +1,16 @@
 <?php
 
-namespace Com\Youzan\ZanHttpDemo\Service;
+namespace Com\Youzan\ZanHttpDemo\Demo\Service;
 
-use Zan\Framework\Network\Http\Client;
+use Zan\Framework\Network\Common\Client;
 
-class Order {
+class HttpCall {
 
-    public function getOrder($orderNo, $kdtId)
+    public function visit()
     {
         $option = [
-            'order_no'     => $orderNo,
-            'kdt_id'       => $kdtId,
+            'order_no'     => 1,
+            'kdt_id'       => 1,
             'format_order' => false,
             'with_items'   => false,
             'with_peerpay' => false,

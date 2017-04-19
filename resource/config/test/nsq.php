@@ -6,5 +6,5 @@
  * Time: 下午4:35
  */
 return [
-    'lookupd' => 'http:nsq-dev.s.qima-inc.com:4161'
+    //'lookupd' => 'http:nsq-dev.s.qima-inc.com:4161'
 ];
