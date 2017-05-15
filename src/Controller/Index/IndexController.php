@@ -3,6 +3,7 @@
 namespace Com\Youzan\ZanHttpDemo\Controller\Index;
 
 use Com\Youzan\ZanHttpDemo\Demo\Service\HttpCall;
+use Com\Youzan\ZanHttpDemo\Demo\Service\TcpCall;
 use Zan\Framework\Foundation\Domain\HttpController as Controller;
 use Com\Youzan\ZanHttpDemo\Model\Index\GetAllDemoData;
 
@@ -14,7 +15,6 @@ class IndexController extends Controller {
         $response =  $this->output('success');
         //设置响应信息头部
         $response->withHeaders(['Content-Type' => 'text/javascript']);
-        var_dump($this->request->getClientIps());
         yield $response;
     }
 
@@ -42,9 +42,16 @@ class IndexController extends Controller {
     }
 
     //Http服务调用示例
-    public function rpcRemoteService()
+    public function httpRemoteService()
     {
         $http = new HttpCall();
         yield $http->visit();
+    }
+
+    public function tcpRemoteService()
+    {
+        $tcp = new TcpCall();
+        $result = (yield $tcp->visit());
+        yield $this->r(0, 'json string', $result);
     }
 }

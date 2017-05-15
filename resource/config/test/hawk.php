@@ -8,9 +8,9 @@
 
 return [
     //是否运行, pre不需要运行
-    'run' => false,
-    'host' => '192.168.66.240',
-    'port' => 8188,
+    'run' => true,
+    'host' => 'hawk-qa.s.qima-inc.com',
+    'port' => 9299,
     'uri' => '/monitor/push',
     //上报时间每60秒一次
     'time' => 60000,

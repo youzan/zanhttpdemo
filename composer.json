@@ -13,10 +13,7 @@
     "packaged/thrift": "0.9.2.1",
     "psr/log": "1.0.0",
     "nova-service/generic": "1.0.2",
-    "nova-service/generic-test": "dev-master",
-    "nova-service/pf": "dev-master",
-    "nova-service/scrm": "dev-master",
-    "nova-service/scrm-base": "dev-master"
+    "nova-service/nova-demo": "dev-master"
   },
   "autoload": {
     "psr-4": {
