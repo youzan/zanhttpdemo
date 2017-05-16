@@ -9,14 +9,13 @@ namespace Com\Youzan\ZanHttpDemo\Model\Index;
 
 use Zan\Framework\Store\Facade\Db;
 
-class GetAllDemoData {
+class GetDBData {
     public function doSql()
     {
         $data = [
             'limit' => 2
         ];
         //demo.demo_sql_id1_1对应resource/sql/demo.php中的配置
-        $result = (yield Db::execute("demo.demo_sql_id1_1", $data));
-        var_dump($result);
+        yield Db::execute("demo.demo_sql_id1_1", $data);
     }
 }

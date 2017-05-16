@@ -4,8 +4,9 @@ namespace Com\Youzan\ZanHttpDemo\Controller\Index;
 
 use Com\Youzan\ZanHttpDemo\Demo\Service\HttpCall;
 use Com\Youzan\ZanHttpDemo\Demo\Service\TcpCall;
+use Com\Youzan\ZanHttpDemo\Model\Index\GetCacheData;
 use Zan\Framework\Foundation\Domain\HttpController as Controller;
-use Com\Youzan\ZanHttpDemo\Model\Index\GetAllDemoData;
+use Com\Youzan\ZanHttpDemo\Model\Index\GetDBData;
 
 class IndexController extends Controller {
 
@@ -16,6 +17,11 @@ class IndexController extends Controller {
         //设置响应信息头部
         $response->withHeaders(['Content-Type' => 'text/javascript']);
         yield $response;
+    }
+
+    public function exception()
+    {
+        throw new \Exception("service unavailable", 503);
     }
 
     //json输出示例
@@ -36,9 +42,20 @@ class IndexController extends Controller {
     //操作数据库示例
     public function dbOperation()
     {
-        $demo = new GetAllDemoData();
+        $demo = new GetDBData();
         //执行sql语句
-        yield $demo->doSql();
+        $result = (yield $demo->doSql());
+        yield $this->r(0, 'json string', $result);
+    }
+
+    public function redisOperation()
+    {
+        $demo = new GetCacheData();
+
+        //执行Redis命令
+        $result = (yield $demo->doCacheCmd());
+        var_dump($result);
+        yield $this->r(0, 'json string', $result);
     }
 
     //Http服务调用示例
