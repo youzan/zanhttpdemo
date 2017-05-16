@@ -7,7 +7,7 @@
  */
 return [
     'app_names' => [
-        'TcpDemo',
+        'TcpDemo'
     ],
     'novaApi' => [
         'TcpDemo' => [
