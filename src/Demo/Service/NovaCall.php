@@ -20,10 +20,12 @@ class NovaCall
         $result['String'] = (yield $service->returnString());
         $result['Enum'] = (yield $service->returnEnum());
         $result['BaseStruct'] = (yield $service->returnBaseStruct());
+
         $result['MixedStruct'] = (yield $service->returnMixedStruct());
         $result['List'] = (yield $service->returnList());
         $result['Set'] = (yield $service->returnSet());
         $result['Map'] = (yield $service->returnMap());
+
 
         yield $result;
     }

@@ -7,7 +7,10 @@
         },
         "1": {
             "type": "path",
-            "url": "nova-sdk/nova-demo/"
+            "url": "nova-sdk/nova-demo/",
+            "options": {
+                "symlink": true
+            }
         },
         "packagist": {
             "type": "composer",
