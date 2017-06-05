@@ -2,7 +2,8 @@
 
 namespace Com\Youzan\ZanHttpDemo\Demo\Service;
 
-use Com\Youzan\Demo\Service\DemoService;
+
+use Com\Yourcompany\Demo\Service\DemoService;
 
 class NovaCall
 {

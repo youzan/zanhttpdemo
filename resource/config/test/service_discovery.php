@@ -8,7 +8,7 @@ return [
     "novaApi" => [
         "tcp-demo" => [
             "path" => "vendor/nova-service/nova-demo/sdk/gen-php",
-            "namespace" => "Com\\Youzan\\Demo\\",
+            "namespace" => "Com\\Yourcompany\\Demo\\",
         ]
     ],
 

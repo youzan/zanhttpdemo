@@ -4,7 +4,7 @@ return [
     'host'          => '0.0.0.0',
     'port'          => 8030,
     'config' => [
-        'worker_num' => 2,
+        'worker_num' => 1,
         'dispatch_mode' => 3,
     ],
     'monitor' =>[
