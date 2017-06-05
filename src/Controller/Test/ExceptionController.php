@@ -1,12 +1,5 @@
 <?php
 
-/**
- * Created by IntelliJ IDEA.
- * User: nuomi
- * Date: 16/4/15
- * Time: 上午11:10
- */
-
 namespace Com\Youzan\ZanHttpDemo\Controller\Test;
 
 use Zan\Framework\Foundation\Domain\HttpController as Controller;

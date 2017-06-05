@@ -1,16 +1,11 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: winglechen
- * Date: 16/3/16
- * Time: 19:33
- */
 
 return [
     'host'          => '0.0.0.0',
-    'port'          => '8030',
+    'port'          => 8030,
     'config' => [
-        'worker_num'    => 1,
+        'worker_num' => 2,
+        'dispatch_mode' => 3,
     ],
     'monitor' =>[
         'max_request'   => 100000,            //

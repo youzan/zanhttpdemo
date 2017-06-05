@@ -3,19 +3,21 @@
 namespace Com\Youzan\ZanHttpDemo\Controller\Index;
 
 use Com\Youzan\ZanHttpDemo\Demo\Service\HttpCall;
-use Com\Youzan\ZanHttpDemo\Demo\Service\TcpCall;
+use Com\Youzan\ZanHttpDemo\Demo\Service\NovaCall;
 use Com\Youzan\ZanHttpDemo\Model\Index\GetCacheData;
 use Zan\Framework\Foundation\Domain\HttpController as Controller;
 use Com\Youzan\ZanHttpDemo\Model\Index\GetDBData;
+use Zan\Framework\Network\Http\Response\Response;
 
-class IndexController extends Controller {
+class IndexController extends Controller
+{
 
     //字符串输出示例
     public function index()
     {
         $response =  $this->output('success');
         //设置响应信息头部
-        $response->withHeaders(['Content-Type' => 'text/javascript']);
+        $response->withHeaders(['Content-Type' => 'text/javascript;charset=utf-8']);
         yield $response;
     }
 
@@ -54,7 +56,6 @@ class IndexController extends Controller {
 
         //执行Redis命令
         $result = (yield $demo->doCacheCmd());
-        var_dump($result);
         yield $this->r(0, 'json string', $result);
     }
 
@@ -62,13 +63,19 @@ class IndexController extends Controller {
     public function httpRemoteService()
     {
         $http = new HttpCall();
-        yield $http->visit();
+        $resp = (yield $http->visit());
+
+        $resp = new Response($resp->getBody());
+        $resp->withHeaders(['Content-Type' => 'text/javascript;charset=utf-8']);
+
+        yield $resp;
     }
 
-    public function tcpRemoteService()
+    // 调用 远程NOVA 服务
+    public function novaRemoteService()
     {
-        $tcp = new TcpCall();
-        $result = (yield $tcp->visit());
+        $tcp = new NovaCall();
+        $result = (yield $tcp->invokeRemoteNovaMethod());
         yield $this->r(0, 'json string', $result);
     }
 }

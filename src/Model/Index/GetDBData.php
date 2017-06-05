@@ -9,7 +9,8 @@ namespace Com\Youzan\ZanHttpDemo\Model\Index;
 
 use Zan\Framework\Store\Facade\Db;
 
-class GetDBData {
+class GetDBData
+{
     public function doSql()
     {
         $data = [

@@ -1,4 +1,6 @@
 <?php
+
+// 参见sqlmap文档
 return [
     'table'             => 'market',
     'insert'=>[
@@ -8,8 +10,9 @@ return [
     ],
 
     'demo_sql_id1_1'      => [
+        'table' => "TABLES",
         'sql'           => "
-            SELECT * FROM member_log
+            SELECT * FROM TABLES
             #LIMIT#
         ",
     ],

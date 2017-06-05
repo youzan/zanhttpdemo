@@ -1,18 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: marsnowxiao
- * Date: 2017/5/15
- * Time: 下午7:08
- */
 
 namespace Com\Youzan\ZanHttpDemo\Demo\Service;
 
 use Com\Youzan\Demo\Service\DemoService;
 
-class TcpCall {
+class NovaCall
+{
 
-    public function visit()
+    public function invokeRemoteNovaMethod()
     {
         $result = [];
 
