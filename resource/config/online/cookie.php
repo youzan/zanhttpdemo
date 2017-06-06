@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'domain' => '.youzan.com',
+    'domain' => '.example.com',
     'path' => '/',
     'expire' => 2592000,
     'secure' => FALSE,
