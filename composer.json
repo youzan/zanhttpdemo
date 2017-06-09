@@ -20,7 +20,7 @@
     "autoload": {
         "psr-4": {
             "Com\\Youzan\\ZanHttpDemo\\": "src",
-            "Com\\Youzan\\ZanHttpDemoInit\\": "init"
+            "Com\\Youzan\\ZanHttpDemo\\Init\\": "init"
         }
     },
     "config": {
