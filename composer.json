@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "zanphp/zan": "2.x-dev",
+        "zanphp/zan": "dev-master",
         "nova-service/nova-demo": "*"
     },
     "autoload": {
