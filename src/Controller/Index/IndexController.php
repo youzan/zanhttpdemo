@@ -15,10 +15,7 @@ class IndexController extends Controller
     //字符串输出示例
     public function index()
     {
-        $response =  $this->output('success');
-        //设置响应信息头部
-        $response->withHeaders(['Content-Type' => 'text/javascript;charset=utf-8']);
-        yield $response;
+        yield $this->display("Demo/welcome/welcome");
     }
 
     public function exception()
