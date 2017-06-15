@@ -11,7 +11,6 @@ use Zan\Framework\Network\Http\Response\Response;
 
 class IndexController extends Controller
 {
-
     //字符串输出示例
     public function index()
     {
