@@ -9,7 +9,7 @@
             "type": "path",
             "url": "nova-sdk/nova-demo/",
             "options": {
-                "symlink": true
+                "symlink": false
             }
         }
     ],
