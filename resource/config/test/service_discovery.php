@@ -1,6 +1,8 @@
 <?php
 
+// 开发调试使用, 不通过etcd, 直连配置
 return [
+    /*
     "app_names" => [
         "tcp-demo"
     ],
@@ -18,4 +20,5 @@ return [
             "port" => 8100,
         ],
     ],
+    */
 ];
