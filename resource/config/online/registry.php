@@ -6,7 +6,7 @@ return [
 
     // 服务发现配置
     'discovery' => [
-        'timeout' => 30000,
+        'timeout' => 3000,
         'loop_time' => 1000,     //worker定时器任务执行时间（判断是否已拉取到服务）
     ],
 

@@ -70,8 +70,14 @@ class IndexController extends Controller
     // 调用 远程NOVA 服务
     public function novaRemoteService()
     {
-        $tcp = new NovaCall();
-        $result = (yield $tcp->invokeRemoteNovaMethod());
-        yield $this->r(0, 'json string', $result);
+        try {
+            $tcp = new NovaCall();
+            $result = (yield $tcp->invokeRemoteNovaMethod());
+            yield $this->r(0, 'json string', $result);
+        } catch (\Exception $e) {
+            $msg = get_class($e) . ":" . $e->getMessage();
+            sys_error($msg);
+            yield $this->r(0, $msg, null);
+        }
     }
 }
