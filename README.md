@@ -9,8 +9,8 @@ zan php http server demo
 3. 在根目录下执行composer update
 4. 配置php.ini
 ```ini
-zan.RUN_MODE = test
-zan.DEBUG = true
+zanphp.RUN_MODE = test
+zanphp.DEBUG = true
 ```
 5. 启动http server
 `php bin/httpd`
