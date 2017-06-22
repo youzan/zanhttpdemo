@@ -1,18 +1,22 @@
 {
     "name": "zanphp/httpdemo",
-    "repositories": [
-        {
+    "repositories": {
+        "0": {
             "type": "git",
-            "url": "https://github.com/youzan/zanphp.git"
+            "url": "https://git.oschina.net/zan-group/zanphp.git"
         },
-        {
+        "1": {
             "type": "path",
             "url": "nova-sdk/nova-demo/",
             "options": {
                 "symlink": false
             }
+        },
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
         }
-    ],
+    },
     "require": {
         "zanphp/zan": "dev-master",
         "nova-service/nova-demo": "*"
