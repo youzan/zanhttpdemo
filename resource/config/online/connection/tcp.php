@@ -4,7 +4,7 @@ return [
     'trace' => [
         'engine'=> 'tcp',
         'host' => '127.0.0.1',
-        'port' => '2280',
+        'port' => 2280,
         'timeout' => 5000,
         'hasRecv' => false,
         'config'    => [
@@ -15,7 +15,8 @@ return [
             'open_nova_protocol' => 1
         ],
         'pool'  => [
-            'keeping-sleep-time' => 10000,
+            'maximum-connection-count' => 5,
+            'minimum-connection-count' => 2,
             'init-connection'=> 2,
         ],
     ],
