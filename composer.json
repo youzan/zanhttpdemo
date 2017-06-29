@@ -6,6 +6,14 @@
             "url": "https://git.oschina.net/zan-group/zanphp.git"
         },
         "1": {
+            "type": "git",
+            "url": "https://git.oschina.net/zan-group/nova-generic.git"
+        },
+        "2": {
+            "type": "git",
+            "url": "https://git.oschina.net/zan-group/nova.git"
+        },
+        "3": {
             "type": "path",
             "url": "nova-sdk/nova-demo/",
             "options": {
