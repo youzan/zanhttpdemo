@@ -1,6 +1,6 @@
 <?php
 
 return [
-    "run" => false,
+    "run" => true,
     "trace_class" => \Zan\Framework\Sdk\Trace\ZanTracer::class
 ];

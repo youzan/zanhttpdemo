@@ -4,8 +4,9 @@ return [
     'common'           => [
         'connection'    => 'redis.default_write',
     ],
-    'some_tpl' => [
-        'key' => 'test_abc_%s_%s',
-        'exp' => 10
+
+    'session' => [
+        'key' => 'PHPREDIS_SESSION:%s',
+        'exp' => 3600 * 24,
     ],
 ];

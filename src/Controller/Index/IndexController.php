@@ -7,6 +7,8 @@ use Com\Youzan\ZanHttpDemo\Demo\Service\NovaCall;
 use Com\Youzan\ZanHttpDemo\Model\Index\GetCacheData;
 use Zan\Framework\Foundation\Domain\HttpController as Controller;
 use Com\Youzan\ZanHttpDemo\Model\Index\GetDBData;
+use Zan\Framework\Network\Common\Client;
+use Zan\Framework\Network\Http\Middleware\Session;
 use Zan\Framework\Network\Http\Response\Response;
 
 class IndexController extends Controller
@@ -79,5 +81,14 @@ class IndexController extends Controller
             sys_error($msg);
             yield $this->r(0, $msg, null);
         }
+    }
+
+    public function testSession()
+    {
+        /** @var Session $session */
+        $session = (yield getSessionHandler());
+        yield $session->set("hello", "world");
+
+        yield $this->display("Demo/welcome/welcome");
     }
 }
