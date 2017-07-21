@@ -39,9 +39,41 @@
         },
         "9": {
             "type": "git",
-            "url": "https://git.oschina.net/zan-group/nova-demo.git"
+            "url": "https://github.com/zanphp/exception.git"
         },
         "10": {
+            "type": "git",
+            "url": "https://github.com/zanphp/coroutine.git"
+        },
+        "11": {
+            "type": "git",
+            "url": "https://github.com/zanphp/timer.git"
+        },
+        "12": {
+            "type": "git",
+            "url": "https://github.com/zanphp/spi.git"
+        },
+        "13": {
+            "type": "git",
+            "url": "https://github.com/zanphp/config.git"
+        },
+        "14": {
+            "type": "git",
+            "url": "https://github.com/zanphp/support.git"
+        },
+        "15": {
+            "type": "git",
+            "url": "https://github.com/zanphp/hawk.git"
+        },
+        "16": {
+            "type": "git",
+            "url": "https://github.com/zanphp/console.git"
+        },
+        "17": {
+            "type": "git",
+            "url": "https://git.oschina.net/zan-group/nova-demo.git"
+        },
+        "18": {
             "type": "git",
             "url": "https://git.oschina.net/zan-group/zanphp.git"
         },
