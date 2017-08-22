@@ -1,6 +1,11 @@
 {
     "name": "zanphp/httpdemo",
-    "repositories": {},
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    },
     "require": {
         "zanphp/zan": "dev-master",
         "nova-service/nova-demo": "dev-master"
